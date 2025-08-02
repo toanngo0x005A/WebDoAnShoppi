@@ -1,0 +1,361 @@
+<!--Có phần mã cải tiến của Trang giỏ hàng này ở folder "BTTuanCuoi" trong folder "javaScript"
+trong folder "TKWeb"
+Thật ra là cũng không khác gì mấy
+Chỉ là thêm chức năng khi xóa hết sạch sản phẩm trong giỏ hàng thì
+sẽ ẩn đi phần Thanh Toán Đơn hàng( tức phần tính tiền được bọc trong nền cam đậm)
+và hiện lên thông báo ở giữa là "Không còn đơn hàng nào trong giỏ hàng"-->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vendor/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../vendor/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../vendor/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/cartsPage.css">
+    <title>Trang giỏ hàng</title>
+    <link rel="icon" type="image/png" href="../imgs/logoWeb/logoIConWeb.png">
+</head>
+<body>
+    <header>
+        <div style="background-color: white; height: 106px;" >
+        </div><!--Chỉ là 1 thẻ tạo khoảng trống màu trắng thôi-->
+
+        <nav id="cuonXuong" class="navbar navbar-expand-xl navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../imgs/logoWeb/logoChinh.png" height="80" width="80" alt="..."> SHOPPI
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMucMenu" aria-controls="navbarMucMenu" aria-expanded="false" aria-label="Chuyen doi Trang Thai Menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>    
+                <div class="collapse navbar-collapse" id="navbarMucMenu">
+                    <ul class="navbar-nav mb-4 mb-xl-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-people-roof"></i> Gia dụng
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Tủ lạnh</a></li>
+                                <li><a class="dropdown-item" href="#">Mày lạnh</a></li>
+                                <li><a class="dropdown-item" href="#">Bếp</a></li>
+                                <li><a class="dropdown-item" href="#">Lò vi sóng</a></li>
+                                <li><a class="dropdown-item" href="#">Máy giặt</a></li>
+                                <li><a class="dropdown-item" href="#">Bình đun nước</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-shirt"></i> Thời trang
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Quần áo</a></li>
+                                <li><a class="dropdown-item" href="#">Giày Dép</a></li>
+                                <li><a class="dropdown-item" href="#">Túi xách</a></li>
+                                <li><a class="dropdown-item" href="#">Phụ kiện</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-mobile-screen-button"></i> Điện tử
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Điện thoại</a></li>
+                                <li><a class="dropdown-item" href="#">Laptop</a></li>
+                                <li><a class="dropdown-item" href="#">Máy tính bảng</a></li>
+                                <li><a class="dropdown-item" href="#">PC</a></li>
+                                <li><a class="dropdown-item" href="#">Console</a></li>
+                                <li><a class="dropdown-item" href="#">Bàn phím</a></li>
+                                <li><a class="dropdown-item" href="#">Tai nghe</a></li>
+                                <li><a class="dropdown-item" href="#">Khác</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form role="search" class="d-flex me-auto">
+                        <input class="form-control me-sm-2" type="search" name="timKiemSanPham" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../transactionHistory/order-history.html">Đơn hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../logIn/auth.html">Đăng nhập</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <div id="GioHang"  class="container">
+
+        <div id="ThuocTinhSP">  
+            <div class="row">
+                <div class="col-2">
+                    Sản phẩm
+                </div>
+                <div class="col-3">
+                    Thông tin sản phẩm             
+                </div>
+                <div class="col-3">
+                    Số lượng
+                </div>
+                <div class="col-3">
+                    Thành tiền
+                </div>
+                <div class="col-1">
+                    Chọn
+                </div>  
+            </div>    
+        </div>
+
+        
+        <div id="AllSPGioHang">
+            <div class="spTrongGioHang row">
+                <div class="col-2">
+                    <img src="../imgs/ImgSanPham/dth1.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="col-3">
+                    iPhone 13 128GB Chính hãng VN/A
+                    <div class="giaTien">13.690.000đ</div>     
+                </div>
+                <div class="col-3">
+                    <input type="number" class="soLuongMua form-control" id="soLuongMua" value="2" min="1">
+                </div>
+                <div class="thanhTien col-3">
+                    <!--Giá trị sẽ được tính toán và thêm vào đây bởi mã javaScript, cụ thể là hàm tinhToanGiaTienSP()-->
+                    <!--Class "thanhTien" dùng để xác nhận chính xác địa chỉ cho mã javaScipt gửi giá trị về-->
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-danger btn-sm nutXoaSP" data-bs-target="#xoaSPModal" data-bs-toggle="modal">
+                        Xóa
+                    </button>
+                </div>
+            </div>
+            <div class="spTrongGioHang row">
+                <div class="col-2">
+                    <img src="../imgs/ImgSanPham/tulanh1.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="col-3">
+                    Tủ lạnh Panasonic NR-CY558GXVN
+                    <div class="giaTien">23.000.000₫</div>            
+                </div>
+                <div class="col-3">
+                    <input type="number" class="soLuongMua form-control" value="1" min="1">
+                </div>
+                <div class="thanhTien col-3">
+                    <!--Giá trị sẽ được tính toán và thêm vào đây bởi mã javaScript, cụ thể là hàm tinhToanGiaTienSP()-->
+                    <!--Class "thanhTien" dùng để xác nhận chính xác địa chỉ cho mã javaScipt gửi giá trị về-->
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-danger btn-sm nutXoaSP" data-bs-target="#xoaSPModal" data-bs-toggle="modal">
+                        Xóa
+                    </button>
+                </div>
+            </div>
+            <div class="spTrongGioHang row">
+                <div class="col-2">
+                    <img src="../imgs/ImgSanPham/ao1.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="col-3">
+                    Áo sơ mi TERI Tay lỡ có túi kèm Cà Vạt
+                    <div class="giaTien">179.000đ</div>    
+                </div>
+                <div class="col-3">
+                    <input type="number" class="soLuongMua form-control" value="3" min="1">
+                </div>
+                <div class="thanhTien col-3">
+                    <!--Giá trị sẽ được tính toán và thêm vào đây bởi mã javaScript, cụ thể là hàm tinhToanGiaTienSP()-->
+                    <!--Class "thanhTien" dùng để xác nhận chính xác địa chỉ cho mã javaScipt gửi giá trị về-->
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn btn-danger btn-sm nutXoaSP" data-bs-target="#xoaSPModal" data-bs-toggle="modal">
+                        Xóa
+                    </button>
+                </div>
+            </div>
+            <div class="spTrongGioHang row">
+                <div class="col-2">
+                    <img src="../imgs/ImgSanPham/laptop1.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="col-3">
+                    Laptop Gaming MSI GF63 12UCX-841VN
+                    <div class="giaTien">15.390.000đ</div>    
+                </div>
+                <div class="col-3">
+                    <input type="number" class="soLuongMua form-control" value="1" min="1">
+                </div>
+                <div class="thanhTien col-3">
+                    <!--Giá trị sẽ được tính toán và thêm vào đây bởi mã javaScript, cụ thể là hàm tinhToanGiaTienSP()-->
+                    <!--Class "thanhTien" dùng để xác nhận chính xác địa chỉ cho mã javaScipt gửi giá trị về-->
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn btn-danger btn-sm nutXoaSP" data-bs-target="#xoaSPModal" data-bs-toggle="modal">
+                        Xóa
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="TongTienThanhToan">
+            <div>Tổng tiền cần thanh Toán:</div>
+            <div id="tongThanhTienSP">
+                <!--Giá trị sẽ được tính toán và thêm vào bởi mã javaScript, cụ thể là hàm tinhToanGiaTienSP()-->
+                <!--ID "tongThanhTienSP" này dùng để xác nhận chính xác địa chỉ cho mã javaScipt gửi giá trị về-->
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="modal fade" id="xoaSPModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn xóa sản phẩm này không?
+                </div>
+                <div class="modal-footer">
+                    <button id="khongXoa" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                    <button id="xacNhanXoa" type="button" class="btn btn-primary"  data-bs-dismiss="modal">Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <form id="ThongTinNgMuaHang" class="container">
+        <div class="row">
+            <h2>Thông tin khách hàng:</h2>
+            <div class="col-lg-6">
+                <label for = "fullName" >Họ tên</label><br>
+                <input type = "text" id = "fullName" name="fullNameNgMua" required>
+                <!--required="required" là một thuộc tính của thẻ <input> trong HTML5 
+                được sử dụng để chỉ định rằng trường nhập liệu đó là bắt buộc và không được bỏ trống 
+                khi người dùng gửi biểu mẫu.
+                Có thể viết ngắn gọn là [required] thay vì [required="required"]-->
+            </div>
+            <div class="col-lg-6">
+                <label for="SdtNgMua">Số điện thoại</label><br>
+                <input type = "text" id = "SdtNgMua" pattern="\d{10}" name="SDTLienHeKhachHang" required>
+                <!--Thuộc tính pattern="\d{10}" 
+                •\d đại diện cho bất kỳ ký tự số nào từ 0 đến 9.
+                •{10} chỉ định rằng mẫu phải có chính xác 10 ký tự số.
+                Nên nếu bạn áp dụng pattern="\d{10}" cho một ô nhập liệu, 
+                //người dùng chỉ có thể nhập vào một chuỗi gồm chính xác 10 chữ số. Nếu họ nhập vào bất kỳ 
+                ký tự nào không phải là số hoặc nếu chuỗi có độ dài không đúng, 
+                trình duyệt có thể hiển thị một thông báo lỗi hoặc không cho phép gửi biểu mẫu cho đến khi 
+                điều kiện được đáp ứng.-->
+            </div>
+            <div class="col-lg-6">
+                <label for="myEmail"> Email</label><br>
+                <input type="email" id ="myEmail" name="myEmail" placeholder="Ex: myname@gmail.com" pattern=".+@gmail\.com" required>
+            </div>
+            <div class="col-lg-6">
+                <label>Giới tính: </label>
+                <div class="container">
+                    <input id="NamGioi" type = "radio" name="gender" value ="GTNam" required>
+                    <label for="NamGioi">Nam</label>
+                    <input id="NuGioi" type = "radio" name="gender" value ="GTNu">
+                    <label for="NuGioi">Nữ</label>
+                </div>
+            </div>
+
+            <h2>Địa chỉ nhận hàng:</h2>
+            <div id="DiaChiNhanHang" class="row">
+                <div class="col-lg-6">
+                    <label for="TinhNhanHang">Chọn tỉnh thành:</label><br>
+                    <select id="TinhNhanHang" required>
+                        <option value="" selected disabled hidden>Tỉnh</option>
+                        <option value="HCM">TP Hồ Chí Minh</option>
+                        <option value="HaNoi">Hà Nội</option>
+                        <option value="ThanhHoa">Thanh Hóa</option>
+                        <option value="NgheAn">Nghệ An</option>
+                        <option value="DongNai">Đồng Nai</option>
+                        <option value="BinhDuong">Bình Dương</option>
+                        <option value="HaiPhong">Hải Phòng</option>
+                        <option value="AnGianh">An Giang</option>
+                        <option value="HaiDuong">Hải Dương</option>
+                        <option value="DaKLak">Dak Lak</option>
+                        <option value="ThaiBinh">Thái Bình</option>
+                        <option value="BacGiang">Bắc Giang</option>
+                        <option value="NamDinh">Nam Định</option>
+                        <option value="#DakLak">Đắk Lắk</option>
+                        <option value="#LamDong">Lâm Đồng</option>
+                        <option value="#TienGiang">Tiền Giang</option>
+                        <option value="#VinhLong">Vĩnh Long</option>
+                        <option value="#TienGiang">Tiền Giang</option>
+                        <option value="#LongAn">Long An</option>
+                        <option value="#DongThap">Đồng Tháp</option>
+                        <option value="#TayNinh">Tây Ninh</option>
+                        <option value="#KienGiang">Kiên Giang</option>
+                        <option value="#PhuQuoc">Phú Quốc</option>
+                        <option value="#HungYen">Hưng Yên</option>
+                        <option value="#TinhKhac">Khác....</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="HuyenNhanHang">Chọn Quận/Huyện:</label><br>
+                    <select id="HuyenNhanHang" required>
+                        <option value="" selected disabled hidden>Quận/Huyện</option>
+                        <option value="PA1">Phương án 1</option>
+                        <option value="PA1">Phương án 2</option>
+                        <option value="PA1">Phương án 3</option>
+                        <option value="PA1">Phương án 4</option>
+                        <option value="PA1">Phương án 5</option>
+                        <option value="PA1">Phương án 6</option>
+                        <option value="PA1">Phương án 7</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="XaNhanHang">Chọn Phường/Xã:</label><br>
+                    <select id="XaNhanHang" required>
+                        <option value="" selected disabled hidden>Phường/Xã</option>
+                        <option value="PA1">Phương án 1</option>
+                        <option value="PA1">Phương án 2</option>
+                        <option value="PA1">Phương án 3</option>
+                        <option value="PA1">Phương án 4</option>
+                        <option value="PA1">Phương án 5</option>
+                        <option value="PA1">Phương án 6</option>
+                        <option value="PA1">Phương án 7</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="DiaChiNho">Địa chỉ cụ thể</label><br>
+                    <input type="text" required id="DiaChiNho" name="DiaChiNhoNhat" placeholder="Số nhà/Đường">
+                </div>
+            
+            </div>
+        
+        </div>
+
+        <div class="text-center m-5">
+            <button id="nutDatHang">Đặt hàng</button>
+        </div>
+        
+    </form>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../javaScript/cartsPage.js"></script>
+    <script src="../javaScript/script.js"></script>
+    
+</body>
+</html>

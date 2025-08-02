@@ -1,0 +1,286 @@
+/*####Phần hình sản phẩm, các tùy chọn và nút mua sản phẩm*/
+#anhSanPhamMain{
+    cursor: pointer; /* Thiết lập hình dạng con trỏ là hình ngón trỏ */
+}   
+
+/*Lí do mà giá tiền ở trang chi tiết sản phẩm( tức index.html trong folder "productDetails" này)
+không bị thu nhỏ khi kích thước màn hình dù dùng chung selector class là "priceSanPham" và "priceSafe"
+=>Là vì những cài đặt của việc thay đổi dựa vào kích thước màn hình đều chỉ cụ thể là 2 class trên
+phải nằm trong class "sanPhamCard". 
+&&Xem những selector cài đặt của việc trên ở file style.css trong folder "CSS". 
+Trích 1 đoạn của cài đặt nói trên:
+@media (min-width: 1400px) {
+    .sanPhamCard .card-text{
+        font-size: 15px;
+    }
+    .sanPhamCard .card-title, .sanPhamCard .priceSanPham{
+        font-size: 22.5px;
+    }
+}
+*/
+
+/*Và vì ta không cài đặt chỉnh kích thước chữ dựa trên kích thước màn hình cho giá tiền ở đây
+nên nó sẽ luôn giữ nguyên dù ở bất kỳ kích thước màn hình nào*/
+
+
+/*Thế nhưng không thu nhỏ lại thì trông khá là to so với hình của sản phẩm khi ở kích thước màn hình nhỏ
+nên ta đành tạo riêng 1 cài đặt thay đổi dựa vào kích thước màn hình luôn*/
+#MucTuyChonMua h1{
+    margin: 0.25em 0 0.5em 0;
+    font-weight: bold;
+}
+#MucTuyChonMua h1, #MucTuyChonMua .priceSanPham{
+    font-size: 18px; 
+}
+#nutMuaNgay{
+    font-size: 12px;
+} 
+/*Như đã nói bên phần @media thì khi cố đồng nhất với [BREAKPOINT kích thước màn hình]
+( tức sm, md, lg, xl, xll) trong bootstrap thì ta nên
+$$$Đặt điều kiện mid-width thôi bỏ đi max-width và đặt "điều kiện có mid-width thỏa cao hơn"
+ở đằng sau các "điều kiện có mid-width thỏa thấp hơn$$$*/
+@media (min-width: 1200px){
+    #MucTuyChonMua h1, #MucTuyChonMua .priceSanPham{
+        font-size: 22px; 
+    }
+    #nutMuaNgay{
+        font-size: 15px;
+    } 
+}
+@media (min-width: 1300px){
+    #MucTuyChonMua h1, #MucTuyChonMua .priceSanPham{
+        font-size: 25px; 
+    }
+    #nutMuaNgay{
+        font-size: 17px;
+    } 
+}
+@media (min-width: 1400px) {
+    #MucTuyChonMua h1, #MucTuyChonMua .priceSanPham{
+        font-size: 30px; 
+    }
+    #nutMuaNgay{
+        font-size: 20px;
+    } 
+}
+#MucTuyChonMua .freeShip{
+    background-color:limegreen;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #111 ;
+}
+
+#nutMuaNgay{
+    margin-top: 1em;
+    padding: 1.25em 4em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: darkorange;
+}
+#nutMuaNgay:hover{
+    background-color:orangered;
+}
+/*####END*/
+
+
+
+
+
+/*####Phần chi tiết về sản phẩm*/
+#ChiTietSP h1{
+    margin:1.25em 0;
+    font-weight: bold;
+}
+
+#CauHinhChiTietSP > div{
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+#CauHinhChiTietSP > div > h6{
+    transform: translate( 0%, 20%);
+}
+
+/* Định dạng thẻ <h6> lẻ */
+#CauHinhChiTietSP > div:nth-of-type(odd) {
+    background-color:rgba(128, 128, 128, 0.4);
+}
+
+/* Định dạng thẻ <h6> chẵn */
+#CauHinhChiTietSP > div:nth-of-type(even) {
+    background-color: white;
+}
+
+/*Tạo hiệu ứng mờ trắng khi tới phần nội dung của Nút [Xem thêm] về Thông tin chi tiết của sản phẩm*/
+.hieuUngMoTrang {
+    max-height: 300px; /* Giới hạn chiều cao ban đầu */
+    overflow: hidden; /* Ẩn phần vượt quá giới hạn */
+    position: relative; /* Cần thiết để tạo hiệu ứng trắng mờ */
+}
+
+.hieuUngMoTrang::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px; /* Chiều cao của hiệu ứng trắng mờ */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)); /* Hiệu ứng trắng mờ */
+    /*[to bottom] là Hướng hiệu ứng từ dưới lên trên. Còn nếu dùng [to top] thì là Hướng hiệu ứng từ trên xuống dưới*/
+}
+
+#XemThemThongTinSP p{
+    margin: 5px;
+    font-size: 20px;
+}
+#XemThemThongTinSP h3{
+    margin: 10px;
+    font-size: 30px;
+    font-weight:bold;
+}
+/*####END*/
+
+
+
+
+/*####Phần đánh giá sản phẩm của người mua*/
+#MucSPLienQuan h2{
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+#MucSPLienQuan .carousel-control-next-icon {
+    background-image: url("../productDetails/imgs/MuiTen/muiTenQuaPhai.png");
+    /*Chỉnh lại biểu tượng đại diện cho nút prev*/    
+}
+
+#MucSPLienQuan .carousel-control-prev-icon {
+    background-image: url("../productDetails/imgs/MuiTen/muiTenQuaTrai.png");
+    /*Chỉnh lại biểu tượng đại diện cho nút next*/
+}
+
+/*Do nút button next và prev trong carousel của bootstrap sẽ chiếm dụng khá nhiều khoảng ở gần nó
+và nó có độ ưu tiên cao hơn các phần nội trong carousel-items. 
+Nên ta phải dùng thuộc tính z-index để đặt lại độ ưu tiên
+Đồng thời cũng phải dịch chuyển nút đại diện cho next về phía bên phải
+và chuyển nút đại diện prev về phía bên trái, nhầm tránh để các phần nội trong carousel-items đè lên
+nút next và nút prev.
+Nhưng khi ở các kích thước màn hình nhỏ lại thì nó lại hiển thị không như ý ta nữa
+Vì khoảng trống 2 bên màn hình ngày càng nhỏ lại
+Nên ta chỉ có thể áp dụng cho màn hình có kích thước lớn hơn 1200px thì nó mới ổn thôi
+Còn nhỏ hơn thì ta cứ để mặc định
+( tức khi màn hình < 1200px thì nút next và nút prev sẽ đè lên phần nội dung trong carousel-tems)*/
+@media (min-width: 1200px){
+    #MucSPLienQuan .carousel-control-next, #MucSPLienQuan .carousel-control-prev{
+        z-index: 0;
+    }
+    #MucSPLienQuan .card{
+        z-index: 1;
+    }
+    
+    #MucSPLienQuan .carousel-control-next-icon {
+        transform: translate( 250%, 0%);
+        
+    }
+    
+    #MucSPLienQuan .carousel-control-prev-icon {
+        transform: translate( -250%, 0%);
+    }
+}
+
+/*####END*/
+
+
+
+/*Phần Đánh giá của người mua*/
+#MucDanhGiaNgMua h2{
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+.danhGiaNgMua{
+    box-shadow:rgb(61, 61, 61) 0 0 5px;
+    padding: 1em 1.25em 0.25em 1.25em;    /*Cách khắc phục lỗi căn giữa theo chiều dọc. 
+    Cụ thể là lỗi này sẽ khiến phần text bị lệch lên trên so với 1 chút so với ở giữa theo chiều dọc
+    Thế nên ta phải đặt padding ở dưới nhỏ hơn padding ở phía trên. 
+    Còn giá trị cụ thể như nào thì ta tự thử đi thử lại là sẽ biết, nhưng tỉ lệ thường sẽ 
+    là [giá trị bottom] = [giá trị top]*25%
+    */
+    margin-bottom: 2.25em;
+    
+}
+
+.ngMuaHang{
+    display: flex;
+    justify-content: space-between;
+}
+
+.thongTinNgMua{
+    display: flex;
+}
+.thongTinMuaSam{
+    color:gray;
+    text-align: right;  /*Đẩy nội dung về bên phải. Nhầm để không gây mất thẩm mĩ
+    Do môi đánh giá sẽ có loại màu sắc khác nhau. Số lượng chữ không giống có thể gây lệch vị trí
+    ngày mua
+    Có thể xóa đi "text-align: right;" để xem nó mất thẩm mĩ như nào*/
+}
+
+.thongTinNgMua img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 0.5em;
+}
+.thongTinNgMua .tenNgMua{
+    font-size: 15px;
+}
+.thongTinNgMua .soSao{
+    color: #ffd500;
+    font-size: 15px;
+}
+.thongTinMuaSam h6{
+    font-size: 12px
+}
+
+@media( min-width: 576px){
+    .thongTinNgMua img{
+        height: 50px;
+        width: 50px;
+    }
+    .thongTinNgMua .tenNgMua, .thongTinNgMua .soSao{
+        font-size: 20px;
+    }
+    .thongTinMuaSam h6{
+        font-size: 15px
+    }
+}
+@media( min-width: 992px){
+    .thongTinNgMua img{
+        height: 65px;
+        width: 65px;
+    }
+    .thongTinNgMua .tenNgMua, .thongTinNgMua .soSao{
+        font-size: 20px;
+    }
+    .thongTinMuaSam h6{
+        font-size: 17px
+    }
+}
+@media( min-width: 1400px){
+    .thongTinNgMua img{
+        height: 80px;
+        width: 80px;
+    }
+    .thongTinNgMua .tenNgMua, .thongTinNgMua .soSao{
+        font-size: 25px;
+    }
+    .thongTinMuaSam h6{
+        font-size: 20px
+    }
+}

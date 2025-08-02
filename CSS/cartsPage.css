@@ -1,0 +1,133 @@
+/*####Phần sản phẩm trong giỏ hàng cùng đơn giá*/
+/*Lí do mà phần Giá tiền bên mục [Thông tin chi tiết] to hơn so với các nội dung
+khác khi ở kích thước màn hình lớn là do
+Nó nằm trong 1 thẻ div khác nữa.
+Quy luật cộng dồn do ta dùng #GioHang .row *( đúng hơn là do tính kế thừa của thuộc tính "font-size")
+( ám chỉ các phần từ chỉ cần nằm trong thẻ gắn "row" thuộc thẻ gắn id "MucSPGioHang". 
+Không quan trọng là con trực tiếp hay con gián tiếp).
+Cụ thể mã là::  <div class="col-3">
+                    Laptop Gaming MSI GF63 12UCX-841VN<br>
+                    <div class="giaTien">15.390.000đ</div>    
+                </div>
+Thẻ <div class="col-3"> nằm ngay trong thẻ thẻ gắn "row" thuộc thẻ gắn id "MucSPGioHang"
+thế nên trong TH màn hình > 1400px thì thẻ <div class="col-3"> sẽ có font-size = 1.5 * 16px = 24px
+**Nếu không chỉnh sửa gì thì 16px luôn là mặc định cho 1em**
+Sau đó thuộc tính font-size sẽ được kế thừa cho thẻ con của <div class="col-3">, 
+tức thẻ <div class="giaTien"> nên giá trị mặc định sẽ là 24px( tức 1em = 24px)
+=>Kích thước cỡ chữ của thẻ <div class="col-3"> sẽ là font-size = 1.5 * 24px = 36px;
+Nhưng vì quy luật cộng dồn như vậy nên kich thước màn hình nhỏ hơn 576px
+thì kích thước cỡ chữ của <div class="giaTien"> lại nhỏ hơn so với các nội dung khác.
+Do lúc kích thước màn hình < 576px thì font-size ta dùng là 0.75em.
+=> <div class="col-3"> có font-size = 0.75 * 16px = 12px
+=>  <div class="giaTien"> có font-size = 0.75 * 12px = 9px.
+Số liệu trên được kiêm chứng là chính xác rồi. Không tin cứ mò vào phần chế độ nhà phát triển mà coi font-size của
+<div class="giaTien"> là bao nhiêu ở kích thước màn hình > 1400px và < 576px. 
+
+
+Tương tự như mục Số lượng nội dung giá trị số đại diện cho số lượng nằm trong thẻ input
+khiến nó to hơn so với  các nội dung khác là vì phần nội dung giá trị đai diện cho số lượng
+nằm ơ trong 1 thẻ khác nữa*/
+#ThuocTinhSP{
+    font-size: 20px;
+}
+/*Giải thích
+Thử đặt font-size của thẻ gắn id "ThuocTinhSP" thành 20px
+thì khi tùy chỉnh font-size bên dưới trong "#MucSPGioHang .row *"( tức các phần tử bên trong class "row" 
+nằm trong thẻ gắn "MucSPGioHang", không quan trọng là con trực tiếp hay con gián tiếp) 
+thì các phần tử nằm trong thẻ gắn id "ThuocTinhSP" sẽ to hơn 1 chút so với 
+[các phần tử bên trong class "row" nằm trong thẻ gắn "MucSPGioHang"].
+Vì mặc định font-size sẽ bằng 16px, nhưng do ta chỉ chỉnh lại font-size cho các phần tử nằm trong
+thẻ gắn id "ThuocTinhSP" thôi( tức thành 20px).
+Nên khi sử dụng font-size có đơn vị em thì sẽ thay đổi dựa vào font-size hiện sở hữu
+**Đơn vị em sẽ tăng dựa trên kich thước font-size hiện tại của thẻ cha**
+Cụ thể VD nếu màn hình > 1400px thì nhờ vào "font-size: 1.5em;" ngay bên dưới 
+thì các phần tử ""#MucSPGioHang .row *" sẽ có có font-size là 24px( do 1.5 * 16px = 24px)
+Nhưng do ta đặt thẻ gắn id "ThuocTinhSP" thành 20px nên riêng các phần tử thuộc thẻ gắn id "ThuocTinhSP"
+Nên kích thước của các phần tử nói trên sẽ là 30px( do 1.5 * 20px = 30px)
+=>Khi kích thước màn hình > 1400px thì
+Kích thước của các thuộc tính sẽ là 30px còn các phần tử khác sẽ bằng 24px.
+*/
+#GioHang .row > *{        
+    border: 1px blue solid;
+}
+
+
+/*"#MucSPGioHang .row > *" ám chỉ các phần tử con trực tiếp
+của thẻ gắn "row* thuộc thẻ gắn id "MucSPGioHang"
+Còn "#MucSPGioHang .row *" ám chỉ các phần từ chỉ cần nằm trong( tức không quan trọng là con trực tiếp
+hay con gián tiếp) thẻ gắn "row thuộc thẻ gắn id "MucSPGioHang"
+*/
+#GioHang .row *{
+    font-size: 0.75em;
+}
+@media( min-width: 576px){
+    #GioHang .row *{
+        font-size: 1em;
+    }
+}
+@media( min-width: 992px){
+    #GioHang .row *{
+        font-size: 1.25em;
+    }
+}
+@media( min-width: 1400px){
+    #GioHang .row *{
+        font-size: 1.5em;
+    }
+}
+
+
+#TongTienThanhToan{
+    background-color:orangered;
+    display: flex;
+    margin: 2em;
+    padding: 1.25em 1.25em 1em 1.25em;
+}
+#TongTienThanhToan > *{
+    font-size: 0.75em;
+    font-weight: bold;
+}
+@media( min-width: 576px){
+    #TongTienThanhToan > *{
+        font-size: 1.25em;
+    }
+}
+@media( min-width: 1200px){
+    #TongTienThanhToan > *{
+        font-size: 1.75em;
+    }
+}
+/*####END*/
+
+
+
+/*####Phần thông tin người mua( khách hàng):*/
+#ThongTinNgMuaHang{
+    padding: 15px;
+    background-color: #999;
+}
+
+/*Chỉ định mọi thẻ input trong row trong thẻ gắn id "ThongTinNgMuaHang trừ thẻ input có type là "raiio"*/
+#ThongTinNgMuaHang .row input:not([type="radio"]), #DiaChiNhanHang select{
+    width: 80%;     /*chiều rộng của thẻ được chỉ định bằng 80% chiều rộng của thẻ cha
+    Tức nếu thẻ cha bị giới hạn bởi các class "col"( ở mã này chính là "col-lg-6)
+    thì thẻ con cũng sẽ bị ảnh hưởng luôn.*/
+    border: 2px solid #222;
+    font-size: 1.5em;
+}
+
+#nutDatHang {
+    background-color:green; /* Màu xanh lá cây */
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 1.25em 10%;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#nutDatHang:hover{
+    background-color: darkgreen;
+}
+/*####END*/

@@ -1,0 +1,12 @@
+#ThuocTinhDonHang{
+    font-size: 20px;
+}
+#LSDonHang .row > *{        
+    border: 1px blue solid;
+}
+
+.nutThongTinDH{
+    font-size: 18px;
+    color:darkgreen;
+    font-weight:bold;
+}

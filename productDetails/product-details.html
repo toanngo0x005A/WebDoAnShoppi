@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vendor/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../vendor/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../vendor/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/productDetailsPage.css">
+    <title>Trang chi tiết</title>
+    <link rel="icon" type="image/png" href="../imgs/logoWeb/logoIConWeb.png">
+</head>
+<body>
+    <!--Chưa xác định được tác dụng cụ thể
+    Thấy người ta làm thì mình làm theo-->
+    <div id="productid-001"></div>
+    <div id="productid-002"></div>
+    <div id="productid-003"></div>
+    <div id="productid-004"></div>
+    <div id="productid-005"></div>
+    <div id="productid-006"></div>
+    <div id="productid-007"></div>
+    <div id="productid-008"></div>
+    <!--Bỏ ra thì thấy chả ảnh hưởng gì-->
+
+    <header>
+        <div style="background-color: white; height: 106px;" >
+        </div><!--Chỉ là 1 thẻ tạo khoảng trống màu trắng thôi-->
+
+        <nav id="cuonXuong" class="navbar navbar-expand-xl navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../imgs/logoWeb/logoChinh.png" height="80" width="80" alt="..."> SHOPPI
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMucMenu" aria-controls="navbarMucMenu" aria-expanded="false" aria-label="Chuyen doi Trang Thai Menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>    
+                <div class="collapse navbar-collapse" id="navbarMucMenu">
+                    <ul class="navbar-nav mb-4 mb-xl-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-people-roof"></i> Gia dụng
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Tủ lạnh</a></li>
+                                <li><a class="dropdown-item" href="#">Mày lạnh</a></li>
+                                <li><a class="dropdown-item" href="#">Bếp</a></li>
+                                <li><a class="dropdown-item" href="#">Lò vi sóng</a></li>
+                                <li><a class="dropdown-item" href="#">Máy giặt</a></li>
+                                <li><a class="dropdown-item" href="#">Bình đun nước</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-shirt"></i> Thời trang
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Quần áo</a></li>
+                                <li><a class="dropdown-item" href="#">Giày Dép</a></li>
+                                <li><a class="dropdown-item" href="#">Túi xách</a></li>
+                                <li><a class="dropdown-item" href="#">Phụ kiện</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-mobile-screen-button"></i> Điện tử
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Điện thoại</a></li>
+                                <li><a class="dropdown-item" href="#">Laptop</a></li>
+                                <li><a class="dropdown-item" href="#">Máy tính bảng</a></li>
+                                <li><a class="dropdown-item" href="#">PC</a></li>
+                                <li><a class="dropdown-item" href="#">Console</a></li>
+                                <li><a class="dropdown-item" href="#">Bàn phím</a></li>
+                                <li><a class="dropdown-item" href="#">Tai nghe</a></li>
+                                <li><a class="dropdown-item" href="#">Khác</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form role="search" class="d-flex me-auto">
+                        <input class="form-control me-sm-2" type="search" name="timKiemSanPham" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../carts/shopping-cart.html">
+                                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../transactionHistory/order-history.html">Đơn hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../logIn/auth.html">Đăng nhập</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="MucTuyChonMua">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div id="TrinhChieuSP" class="carousel slide" data-bs-theme="dark" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#TrinhChieuSP" data-bs-slide-to="0"  class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#TrinhChieuSP" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#TrinhChieuSP" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#TrinhChieuSP" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#TrinhChieuSP" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#TrinhChieuSP" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#TrinhChieuSP" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        </div>
+                        <div id="anhSanPhamMain" class="carousel-inner">
+                            <!--id "anhSanPhamMain" được dùng để giúp mã javaScript chỉ định chính xác 
+                            vị trí để lấy hình ảnh sản phẩm hiện tại để truyền vào "modal có tác dụng khi 
+                            ta click vào sẽ phóng to hình ảnh". Tức mã dưới đây:
+                                $('#anhSanPhamMain .carousel-item').each(function(index){..}
+                            Cũng như giúp mã javaScript xác định vị trí nào khi click vào thì sẽ thực hiện mã
+                            Tức mã dưới đây:
+                                $('#anhSanPhamMain img').click(function()
+                            Cuối cùng nó giúp tạo 1 selector nhỏ dưới đây:
+                                #anhSanPhamMain{
+                                    cursor: pointer; /* Thiết lập hình dạng con trỏ là hình ngón trỏ */
+                                }   
+                            -->
+                            <div class="carousel-item active">
+                                <img id="productImg1" src="imgs/ChiTietSP/iphone13/iphone13Green/iphone13Green1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="productImg2" src="imgs/ChiTietSP/iphone13/iphone13Green/iphone13Green2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="productImg3" src="imgs/ChiTietSP/iphone13/iphone13Green/iphone13Green3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="productImg4" src="imgs/ChiTietSP/iphone13/iphone13Green/iphone13Green4.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="productImg5" src="imgs/ChiTietSP/iphone13/iphone13Green/iphone13Green5.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="productImg6" src="imgs/ChiTietSP/iphone13/iphone13Green/iphone13Green6.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imgs/ChiTietSP/iphone13/iphone13ThongTinChung.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <!--Không có id cho thẻ <img> cuối cùng vì hình ảnh này được dùng chung 
+                            nên sẽ không cần thay đổi khi chọn màu sắc khác dẵn tới việc không cần có id. 
+                            **Xem chức năng của các id được gắn vào thẻ <img> ở bên dưới**-->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#TrinhChieuSP" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#TrinhChieuSP" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <!--Chức năng chung của các ID được gắn cho các thẻ <img> trên là:
+                    Tức các ID (`productImg1`, `productImg2`, `productImg3`, `productImg4`, `productImg5`, `productImg6`) 
+                    được gắn cho các phần tử `<img>` trong một carousel, được sử dụng để hiển thị các hình ảnh của sản phẩm khác nhau. 
+                    Chức năng chung của các ID này là:
+                    1. Xác định đúng hình ảnh tương ứng trong carousel: Mỗi ID đại diện cho một hình ảnh cụ thể trong carousel. 
+                    Khi người dùng thực hiện hành động (ví dụ: chọn màu sản phẩm), 
+                    JavaScript sẽ sử dụng các ID này để xác định hình ảnh cần thay đổi
+                    ( ở đây việc thay đổi sẽ thực hiện bằng hàm `capNhatProductImage()`)
+                    2. Cho phép JavaScript cập nhật hình ảnh: Khi người dùng chọn một màu sắc cụ thể, 
+                    hàm `capNhatProductImage` sẽ được gọi và sử dụng các ID này để cập nhật `src` của 
+                    từng hình ảnh, thay đổi hình ảnh hiển thị trên carousel tương ứng với màu sắc đã chọn.
+                    Nhờ vào việc gắn các ID này cho các phần tử `<img>`, bạn có thể dễ dàng thực hiện 
+                    các thay đổi hình ảnh mà không cần tải lại trang, giúp cải thiện trải nghiệm người dùng 
+                    khi xem các biến thể của sản phẩm trên trang web của bạn.
+
+                    ₫₫₫₫Lưu ý: Thẻ <img> nào cần thay đổi khi người dùng thực hiện hành động 
+                    (ví dụ: chọn màu sản phẩm, chọn loại kích thước,...) thì mới cần gắn id
+                    không thì bỏ qua. VD như thẻ <img> cuối cùng trong <div class="carousel-inner">
+                    thì không cần thay đổi nên bỏ qua.
+                -->
+                <div class="col-lg-4">
+                    <h1>iPhone 13 128GB Chính hãng VN/A</h1>
+                    <p class="priceSanPham">13.690.000đ<span class="priceSafe"> 18.990.000đ</span></p>
+
+                    <form>
+                        <!--***Kết hợp xem với phần chú thích về Hàm chuyenTrangThanhToan1() 
+                        bên trong file "script.js" ở folder javaScript***
+                        ₫₫₫₫SIÊU CHÚ Ý: Nút [Mua] phải là nút input/button
+                        và nó phải nằm chung form với ô nhập số lượng, mã và các tùy chọn khác nếu có
+                        Vì nhằm mục đích khi người dùng bấm nút [Mua] thì thẻ form sẽ gửi toàn bộ dữ liệu
+                        từ số lượng, mã và các tùy chọn sản phẩm mà người dùng chọn về cho sever để nó xử lý
+                        ####Giải thích cụ thể:
+                        •Nút mua hàng thường được thể hiện bằng thẻ input hoặc button, không nên sử dụng 
+                        thẻ a cho mục đích này. Thẻ input có thể được sử dụng với type="submit", 
+                        trong khi thẻ button có thể sử dụng với type="button" hoặc type="submit". 
+                        Vì thẻ a thường được sử dụng cho các liên kết thôi chứ không phải là một phần tử 
+                        mà người dùng có thể gửi dữ liệu qua thẻ <form> được.
+                            
+                        •Nút [Mua] thường được thiết kế là một phần của một form trong trường hợp mua hàng 
+                        trực tuyến vì các lý do sau:
+                        1. **Gửi dữ liệu form**: Khi người dùng nhấn nút "Mua", thông tin được nhập trong 
+                        form (như số lượng, mã sản phẩm, các tùy chọn khác) cần được gửi đến máy chủ để 
+                        xử lý việc mua hàng. Sử dụng nút `input` hoặc `button` trong form cho phép việc này 
+                        diễn ra một cách tự nhiên, vì cả hai đều có khả năng gửi dữ liệu khi được nhấn.
+                        2. **Hành động gây ra sự kiện form submit**: Khi một nút `input` hoặc `button` có 
+                        `type="submit"` được nhấn trong một form, form sẽ được gửi đi (submit), và các dữ liệu 
+                        trong form sẽ được gửi đến máy chủ để xử lý.
+                        3. **Tuân thủ quy ước**: Việc sử dụng nút `input` hoặc `button` trong một form làm cho 
+                        giao diện của bạn tuân thủ các quy ước và tiêu chuẩn thiết kế web, giúp trải nghiệm 
+                        người dùng trở nên thân thiện và dễ hiểu hơn.
+                        4. **Khả năng tùy chỉnh**: Bạn có thể dễ dàng tùy chỉnh giao diện và hành vi của 
+                        nút mua hàng bằng cách sử dụng nút `input` hoặc `button`, bao gồm việc thêm hình ảnh, 
+                        biểu tượng, hiệu ứng hoặc phản hồi người dùng.
+                        =>Nói chung, việc sử dụng nút `input` hoặc `button` cho nút "Mua" trong form làm 
+                        cho giao diện của bạn chuyên nghiệp hơn và giúp tương tác với người dùng trở nên 
+                        rõ ràng và dễ dàng hơn.                     
+                        
+                        $$$$Câu hỏi đặt giá: So sánh giữa thẻ <input> và thẻ <button> thì nên chọn thẻ nào 
+                        để làm nút [Mua]????
+                        =>Nếu chỉ cần một nút "Mua" đơn giản để gửi form, thì ưu tiên sử dụng thẻ `button`. 
+                        Tuy nhiên, nếu bạn cần một nút "Mua" với các tính năng đặc biệt như hình ảnh, biểu tượng, 
+                        hoặc cần tuỳ chỉnh phức tạp hơn, thì bạn có thể sử dụng thẻ `input` với `type="image"` 
+                        hoặc `type="submit"`.
+                        !!Dưới đây là một số điểm mạnh của mỗi loại:
+                        **Thẻ `button`**:
+                        - Cho phép chứa nhiều loại nội dung như văn bản, hình ảnh, hoặc biểu tượng.
+                        - Dễ dàng tuỳ chỉnh bằng CSS để đạt được hiệu ứng và giao diện mong muốn.
+                        - Có thể xử lý sự kiện bằng JavaScript một cách linh hoạt.
+
+                        **Thẻ `input`**:
+                        - Thường được sử dụng cho các trường nhập liệu, nhưng `type="image"` hoặc `type="submit"` có thể được sử dụng để tạo nút "Mua".
+                        - Tạo ra một nút với giao diện đơn giản hơn so với thẻ `button`.
+                        - Dễ dàng điều chỉnh kích thước và vị trí bằng CSS, nhưng không linh hoạt như thẻ `button`.
+
+                        Nói chung, việc lựa chọn giữa thẻ `input` và `button` phụ thuộc vào yêu cầu cụ thể 
+                        của bạn và mức độ tuỳ chỉnh bạn muốn thực hiện cho nút [Mua] của mình.
+                        -->
+                        <div class="container">
+                            <!--Thuộc tính checked:  chọn mặc định khi trang web được tải. Khi thuộc tính này được áp dụng, 
+                            ô checkbox sẽ được hiển thị đã được chọn và radio button sẽ hiển thị đã được chọn mặc định 
+                            nếu không có lựa chọn khác được chọn.-->                                  
+                            <input type="radio" id="color-pink" name="color" value="pink" onchange="capNhatProductImage('pink')">
+                            <label for="color-pink">Hồng</label>
+                    
+                            <input type="radio" id="color-green" name="color" value="green" onchange="capNhatProductImage('green')" checked>
+                            <label for="color-green">Xanh lá</label>
+
+                            <input type="radio" id="color-black" name="color" value="black" onchange="capNhatProductImage('black')">
+                            <label for="color-black">Đen</label>
+
+                            <input type="radio" id="color-white" name="color" value="white" onchange="capNhatProductImage('white')">
+                            <label for="color-white">Trắng</label>
+
+                            <input type="radio" id="color-blue" name="color" value="blue" onchange="capNhatProductImage('blue')">
+                            <label for="color-blue">Xanh biển</label>
+                        </div>
+
+                        <div class="freeShip">
+                            <p><i class="fas fa-shipping-fast"></i> FREE VẬN CHUYỂN TOÀN QUỐC</p>
+                        </div>
+
+                        <div>
+                            <h5>Cùng với nhiều khuyến mãi khác: </h5>
+                            <ul>
+                                <li>Ốp lưng chính hãng Apple giảm thêm 300K khi mua kèm iPhone (áp dụng tuỳ model)
+                                </li>
+                                <li>Hư gì đổi nấy 12 tháng tại 3158 siêu thị toàn quốc (miễn phí tháng đầu)
+                                </li>
+                                <li>Cơ hội trúng 10 xe máy Yamaha Sirius mỗi tháng, tổng giải thưởng lên đến 390 Triệu
+                                </li> 
+                            </ul>
+                        </div>
+
+                    
+                        <!--₫₫₫₫Siêu Chú ý: Cái thẻ input dưới đây( tức
+                        <input type="number" class="form-control" id="soLuongMua" value="1" min="1">
+                        ) đã có thể chặn được mọi ký tự khác ký tự số rồi. 
+                        Ngoại trừ chữ e và dấu chấm ra vì
+                        -Dấu chấm là để biểu tượng các số không nguyên
+                        -Còn Chữ "e" thường được sử dụng để đại diện cho số Euler, một hằng số quan trọng 
+                        trong toán học và khoa học tự nhiên. Số Euler thường được ký hiệu là "e" 
+                        và có giá trị xấp xỉ khoảng 2.71828.
+                        $$$$Câu hỏi đắt giá: Vậy tại sao t vẫn nhập được ký tự khác số như a, b, g, t,... vào nè???
+                        =>Đó là vì ta đang dùng bàn phím Telex Tiếng việt. Khi nhập bằng bàn phím Telex ta đang sử dụng
+                        các ký tự Unicode lớn rồi, nên nó không phân biệt được số và chữ nữa
+                        Để sửa lỗi ta cần chỉnh lại bàn phím ENG( tiếng anh) thì khi ta nhập vào. 
+                        Chắc chắn nó sẽ không nhận bất kỳ ký tự khác ký tự số( trừ dấu chấm và chữ e như đã nói)
+                        Còn nếu muốn chặn luôn khi ở các bàn phím sử dụng Unicode như Telex thì phải
+                        làm 1 hệ thống chặn khá phức tạp. Nên tạm thời ta cứ chặn ở ENG thôi là được rồi
+                        Chừng nào có cơ hội học hỏi cách làm ở các dev chuyên thì hãy làm -->
+                        <div class="form-group">
+                            <label for="soLuongMua">Số lượng:</label>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-lg" type="button" id="giamSL">-</button>
+                                </div>
+                                <input type="number" class="form-control" id="soLuongMua" value="1" min="1">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-lg" type="button" id="tangSL">+</button>
+                                </div>                             
+                            </div>
+                        </div>
+                        <!--Khỏi giải thích phần nút [Mua ngay] do nó đã quá quen thuộc rồi
+                        Dưới đây là giải thích cho mỗi selector được sử dụng trong mã HTML của bạn:
+                        1. `#soLuongMua`:được sử dụng để chọn phần tử có id là "soLuongMua". 
+                        Trong trường hợp này, nó được sử dụng để chọn input number, nơi người dùng có thể 
+                        nhập số lượng cần mua.
+                        2. `#giamSL` và `#tangSL`: được sử dụng để chọn các nút (-) và (+) tương ứng. 
+                        Những nút này được sử dụng để giảm hoặc tăng số lượng của input number.
+                        3. `.form-group`: Đđược sử dụng để chọn tất cả các phần tử có lớp là "form-group". 
+                        Trong trường hợp này, nó được sử dụng để nhóm các phần tử liên quan của biểu mẫu, 
+                        bao gồm nhãn và input number.
+                        4. `.input-group`: được sử dụng để chọn tất cả các phần tử có lớp là "input-group". 
+                        Trong trường hợp này, nó được sử dụng để nhóm input number và các nút tăng giảm số lượng.
+                        5. `.input-group-append`: được sử dụng để chọn tất cả các phần tử có lớp là 
+                        "input-group-append". Trong trường hợp này, nó được sử dụng để nhóm các nút tăng 
+                        giảm số lượng bên cạnh input number. 
+                        6.  'btn btn-outline-secondary btn-lg': được sử dụng để áp dụng 
+                        kiểu dáng từ Bootstrap cho các nút (+) và (-).
+                        Cụ thể:
+                            .btn: áp dụng các kiểu dáng chung cho các nút (button) trong Bootstrap.
+                            .btn-outline-secondary: áp dụng kiểu dáng cho nút 
+                            với phông chữ màu xám và viền nền trong Bootstrap.
+                            .btn-lg: áp dụng kiểu dáng lớn (large) cho nút trong Bootstrap.
+                        -->                             
+
+                        <div class="text-center">
+                            <button type="button" id="nutMuaNgay" onclick="window.location.href = '../carts/shopping-cart.html';">Mua ngay</button>
+                        </div>                        <!--Đây là cách viết hàm javaScript ngắn gọn ngay trong mã html-->
+                                        <!--Có thể dùng hàm chuyenTrangThanhToan2() ở chỗ onclick cũng được
+                                        Nhưng ta muốn giới thiệu cách viết ngắn gọn nên dùng thử cachs trên-->
+                    </form>
+                    
+                                       
+                </div>
+            </div>
+        </div>
+    </div>
+    
+ 
+    <!-- Modal này dùng để hiển thị các hình ảnh sản phẩm to hơn trong một carousel (danh sách trượt) 
+    khi người dùng click vào hình ảnh sản phẩm.
+    Kết hợp với phần mã javaScript bên kia luôn. Cụ thể phần nữa đó ở vị trí:
+    $(document).ready(function(){
+        $('#anhSanPhamMain img').click(function(){...}
+    -->
+    <div class="modal fade" id="PhongToImgModal" tabindex="-1" aria-labelledby="PhongToImgModal" aria-hidden="true">
+        <!--Toàn bộ selector trên đều là của Bootstrap hết. Trừ id selector "PhongToImgModal" là ta tự đăt đặt thôi.
+            •Lớp "modal": tạo ra các cửa sổ modal trên trang web, cho phép hiển thị thông tin chi tiết 
+            hoặc tương tác với người dùng mà không làm gián đoạn luồng làm việc chính.
+            Đồng thời, nó cung cấp các lớp để điều chỉnh kích thước và kiểu dáng của modal, 
+            như "modal-lg", "modal-xl" cho modal lớn và "modal-sm" cho modal nhỏ.
+            •Lớp "fade": được sử dụng để tạo hiệu ứng mờ dần khi modal xuất hiện và biến mất.
+            Để modal với lớp fade hoạt động đúng cách, bạn cần phải có
+            các thuộc tính data-bs-toggle và data-bs-target ở nút button
+            Các thuộc tính này sẽ giúp Bootstrap nhận biết rằng khi nhấn vào nút, modal tương ứng sẽ được mở.
+
+            •Id "PhongToImgModal": được sử dụng để giúp mã javaScript xác định modal cần được hiển thị
+            Tức mã dưới đây:
+                $('#PhongToImgModal').modal('show');
+            
+            •Thuộc tính tabindex="-1": được sử dụng để loại bỏ( tức ẩn) modal khỏi luồng trình tab 
+            khi người dùng điều hướng bằng bàn phím.
+            Thuộc tính tabindex="-1" trong một modal: cho phép phần tử có thể nhận được sự tập trung 
+            (focus) thông qua JavaScript, mặc dù không thể được chọn bằng cách sử dụng phím Tab. 
+            Điều này có nghĩa là modal có thể trở thành mục tiêu của sự tập trung khi cần thiết, 
+            nhưng sẽ không xuất hiện trong thứ tự tab thông thường của người dùng 
+            khi họ di chuyển qua các phần tử trên trang bằng phím Tab.
+            Tóm lại nó có 2 công dụng chính là:
+                -Tập trung bằng JavaScript: Giúp bạn có thể đặt sự tập trung vào modal khi nó được mở 
+                thông qua mã JavaScript. Điều này rất hữu ích để cải thiện trải nghiệm người dùng 
+                và khả năng truy cập của trang web.
+                -Không xuất hiện trong thứ tự tab: Tránh cho modal xuất hiện trong thứ tự tab thông thường, 
+                đảm bảo rằng người dùng không thể vô tình tab vào modal khi nó không hiển thị.
+            ***Nhấn tab trong khi chạy web đi sẽ thấy việc di chyển qua các phần từ trên trang bằng
+            phím tab là như nào***
+
+            •Thuộc tính "aria-labelledby": có ý nghĩa quan trọng trong việc truy cập và trải nghiệm 
+            người dùng khi sử dụng trình đọc màn hình hoặc công nghệ trợ giúp khác.
+            Tức aria-labelledby (cùng với các thuộc tính và kỹ thuật khác như aria-label, aria-describedby,...) 
+            được thiết kế đặc biệt để cải thiện trải nghiệm sử dụng của người mù hoặc người có khuyết tật trực quan. 
+            Khi sử dụng các công nghệ hỗ trợ như trình đọc màn hình, người dùng có thể dễ dàng truy cập thông tin 
+            và tương tác với các phần tử trên trang web.
+            
+            •Thuộc tính [aria-hidden="true"]: được sử dụng để cho trình duyệt biết rằng modal này 
+            không được hiển thị khi ban đầu tải trang.
+        -->
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="MucHienThiImgPhongTo" class="carousel slide" data-bs-theme="dark" data-ride="carousel">
+                        <div class="carousel-inner">
+                        <!-- Thêm các carousel-item khác vào đây bằng JavaScript
+                        Xem bên file "productDetailsPage.js", cụ thể là ở hàm
+                        $(document).ready(function(){
+                            $('#anhSanPhamMain img').click(function(){...} -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#MucHienThiImgPhongTo" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#MucHienThiImgPhongTo" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        Đoạn mã trên định nghĩa một modal có cấu trúc cơ bản với Bootstrap. 
+        Dưới đây là phân tích của từng phần:
+        1. **modal-dialog modal-dialog-centered**: Đây là phần chứa nội dung của modal. 
+        `modal-dialog` chỉ định kích thước và kiểu dáng của modal, 
+        trong trường hợp này là trung tâm (`modal-dialog-centered`).
+        Cụ thể `modal-dialog-centered` giúp căn giữa phần nội dung của hộp thoại modal (modal dialog). 
+        Khi được áp dụng, nó giúp căn giữa phần nội dung của modal theo cả chiều dọc và chiều ngang 
+        trong cửa sổ trình duyệt.
+        =>phần nội dung của modal sẽ được đặt ở trung tâm của cửa sổ trình duyệt, không phụ thuộc vào 
+        kích thước của nội dung đó. Điều này giúp tạo ra giao diện modal hiển thị một cách trực quan và 
+        thân thiện với người dùng.
+        Còn Lớp "modal-xl": làm cho modal có kích thước lớn hơn so với modal thông thường khá nhiều.
+        Tối đa kích thước modal lên tới 1140px. Nhưng đó là kích thước tối đa nên dù ở màn hình
+        có kích thước hiển thị nhỏ thì nó vẫn không chiếm hết chiều rộng màn hình 
+        mà sẽ chừa lại ít nhất 10% chiều rộng.
+        =>Kích thước tối đa của "modal-xl" là 1140px và chiếm chiều rộng tối đa là 90%.
+
+        ₫₫Lưu ý: Bạn nên đặt lớp "modal-xl" ở thẻ div với lớp "modal-dialog modal-dialog-centered". 
+        Vì Lớp "modal-xl" thường được sử dụng để chỉ định kích thước lớn của modal, 
+        trong khi "modal-dialog" và "modal-dialog-centered" chỉ định cấu trúc và căn giữa modal. 
+        =>Do đó, việc đặt "modal-xl" trong thẻ div của modal dialog sẽ là lựa chọn hợp lý.
+
+
+        2. **modal-content**: Là phần bao bọc nội dung của modal.
+        3. **modal-body**: Phần này chứa nội dung chính của modal. Trong trường hợp này, 
+        nó là một carousel để hiển thị hình ảnh.
+
+        4. **MucHienThiImgPhongTo**: dùng để mã javaScipt xác định chính xác vị trí carousel-inner 
+        cần truyền hình ảnh sản phẩm vào. Tức mã dưới đây:
+            $('#MucHienThiImgPhongTo .carousel-inner').append(luuTruMaCodeImg);
+        Nếu không có thì nó sẽ chuyển hình ảnh sản phẩm vào all các carousel-inner luôn
+        Do carousel-inner là class luôn được dùng trong các mã có sử dụng carousel
+        chứ không riêng gì ở đây mới có carousel-inner thôi.
+        Cũng như việc giúp javaScipt xác định chính xác vị trí cần xóa các hình ảnh sản phẩm đi. 
+        Tức mã dưới đây:
+            $('#MucHienThiImgPhongTo .carousel-inner').empty();
+        5. **carousel-inner**: Là container chứa các carousel-item, ở đây cụ thể là 
+        nơi chứa các hình ảnh được hiển thị trong carousel.
+
+        6. **carousel-control-prev** và **carousel-control-next**: Các nút điều khiển trước và sau của carousel, 
+        cho phép người dùng chuyển đổi giữa các hình ảnh.
+        Mã HTML trên tạo ra một modal với carousel bên trong, cho phép người dùng xem qua các hình ảnh một cách thuận tiện.
+        -->
+    </div>
+
+    
+    <div id="ChiTietSP">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>Thông tin chi tiết:</h1>
+                    <div>                   
+                        <img src="imgs/ChiTietSP/iphone13/thongTinChiTiet/iphone13CauTruc.jpg" class="d-block w-100" alt="...">
+                        <p>Trong khi sức hút đến từ bộ 4 phiên bản iPhone 12 vẫn chưa nguội đi, thì hãng điện thoại Apple đã mang đến cho người dùng một siêu phẩm mới iPhone 13 series với nhiều cải tiến thú vị sẽ mang lại những trải nghiệm hấp dẫn nhất cho người dùng.</p>
+                        <div class="hieuUngMoTrang">
+                            <h3>Hiệu năng vượt trội nhờ chip Apple A15 Bionic</h3>
+                            <p>Bộ vi xử lý Apple A15 mới gia tăng tốc độ CPU tới 50% và GPU đồ họa nhanh hơn 30% so với các đối thủ cạnh tranh trong cùng phân khúc, giúp iPhone 13 thể hiện sức mạnh khả năng xử lý ấn tượng hơn, mượt mà trên mọi tác vụ.</p>
+                            <img src="imgs/ChiTietSP/iphone13/thongTinChiTiet/iphone13BoXuLy.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="text-center">
+                            <button style="width: 300px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#XemThemThongTinSP">
+                                Xem thêm chi tiết
+                            </button> 
+                            <!--Đây là nút [Xem thêm] của modal về Thông tin chi tiết của sản phẩm
+                            Khi nhấp vào nút này thì Modal có gắn id "XemThemThongTinSP" sẽ hiện ra.
+                            -->  
+                        </div>
+                    </div>
+                </div>
+                <div id="CauHinhChiTietSP" class="col-lg-4">
+                    <h1>Cấu hình sản phẩm:</h1>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">Màn hình</h6>
+                        <h6 class="col-8">OLED6.1"Super Retina XDR</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">Hệ điều hành</h6>
+                        <h6 class="col-8">IOS 15</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">Camera sau</h6>
+                        <h6 class="col-8">2 camera 12MP</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">Camera trước</h6>
+                        <h6 class="col-8">12MP</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">SIM</h6>
+                        <h6 class="col-8">1 NanoSim SIM & 1eSIM, Hỗ trợ 5G</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">PIN</h6>
+                        <h6 class="col-8">3240 mAh, 20W</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">RAM</h6>
+                        <h6 class="col-8">4 GB</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">Chip xử lý(CPU)</h6>
+                        <h6 class="col-8">Apple A15 Bionic 6 nhân</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">Chip đồ họa(GPU)</h6>
+                        <h6 class="col-8">Apple GPU 4 nhân</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">Chất liệu</h6>
+                        <h6 class="col-8">Khung nhôm & Mặt lưng kính cường lực</h6>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-4 fw-bold">Kích thước, khối lượng</h6>
+                        <h6 class="col-8">Dài 146.7 mm - Ngang 71.5mm - Dày 7.65mm - Nặng 173g</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+    <!-- Modal này dùng để hiển thị All thông tin chi tiết của sản phẩm khi người dùng nhấp vào
+    nút xem thêm-->
+    <div class="modal fade" id="XemThemThongTinSP" tabindex="-1" aria-labelledby="XemThemThongTinSPLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 style="font-weight:bold;" class="modal-title fs-10" id="XemThemThongTinSPLabel">Thông Tin Chi Tiết</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="imgs/ChiTietSP/iphone13/thongTinChiTiet/iphone13CauTruc.jpg" class="d-block w-100" alt="...">
+                    <p>Trong khi sức hút đến từ bộ 4 phiên bản iPhone 12 vẫn chưa nguội đi, thì hãng điện thoại Apple đã mang đến cho người dùng một siêu phẩm mới iPhone 13 series với nhiều cải tiến thú vị sẽ mang lại những trải nghiệm hấp dẫn nhất cho người dùng.</p>        
+                    <h3>Hiệu năng vượt trội nhờ chip Apple A15 Bionic</h3>
+                    <p>Bộ vi xử lý Apple A15 mới gia tăng tốc độ CPU tới 50% và GPU đồ họa nhanh hơn 30% so với các đối thủ cạnh tranh trong cùng phân khúc, giúp iPhone 13 thể hiện sức mạnh khả năng xử lý ấn tượng hơn, mượt mà trên mọi tác vụ.</p>
+                    <img src="imgs/ChiTietSP/iphone13/thongTinChiTiet/iphone13BoXuLy.jpg" class="d-block w-100" alt="...">
+                    <p>So với bản tiền nhiệm, chipset này thể hiện tốc độ CPU cải tiến đến 40% và hiệu năng đồ họa nhảy vọt 80%, trong khi tiết kiệm điện năng hơn đến 15% nhờ được sản xuất trên tiến trình 5 nm cải tiến.</p>
+                    <p>iPhone 13 có dung lượng bộ nhớ trong 256 GB lý tưởng cho nhu cầu lưu trữ cá nhân, với mọi nội dung theo ý muốn mà không lo nhanh đầy bộ nhớ</p>
+                    <img src="imgs/ChiTietSP/iphone13/thongTinChiTiet/iphone13ROM.jpg" class="d-block w-100" alt="...">
+                    <h3>Màn hình Super Retina XDR sắc nét, siêu sáng</h3>
+                    <p>iPhone 13 dùng tấm nền OLED chất lượng cao cho màn hình 6.1 inch, có mật độ điểm ảnh lớn, gam màu rộng, độ phân giải cao đến 1170 x 2532 Pixels tạo ra những khung hình vượt trội về độ nét, sống động trong từng chi tiết, chân thực hơn ở mọi góc nhìn.</p>
+                    <img src="imgs/ChiTietSP/iphone13/thongTinChiTiet/iphone13ManHinh.jpg" class="d-block w-100" alt="...">
+                    <p>Với công nghệ màn hình Super Retina XDR mang đến độ sáng vượt trội, đạt tối đa 1200 nits ở chế độ HDR, góp phần ổn định chất lượng khung hình trong nhiều điều kiện ánh sáng, không lo bị mờ màn hình do ánh sáng gắt.</p>
+                    <h3>Hệ thống camera xuất sắc</h3>
+                    <p>Cụm camera kép 12 MP mặt sau trang bị chống rung quang học Sensor-shift và kích thước cảm biến lớn, giúp máy thu sáng vượt trội nhiều hơn đến 47%, cho ra những video và ảnh chụp tuyệt đẹp, màu sắc chân thật, chi tiết sống động tựa như cuộc sống, rõ nét cả với những bức ảnh đêm.</p>
+                    <img src="imgs/ChiTietSP/iphone13/thongTinChiTiet/iphone13Camera.jpg" class="d-block w-100" alt="...">
+                    <p>Cùng với hàng loạt các tính năng thân thuộc khác trên iPhone thế hệ mới như chụp hình ban đêm, quay chậm, xóa phông, zoom kỹ thuật số hoặc quang học, ổn định chất lượng bằng cảm biến chống rung,... biến chiếc điện thoại thông minh trở thành công cụ sáng tạo thực sự cho mỗi người dùng.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="MucSPLienQuan" class="carousel slide">
+        <div class="carousel-inner">
+            <h2 class="container">Các sản phẩm liên quan</h2>
+            <!--Phải gắn class "container" của bootstrap cho tiêu đề h2
+            Nhằm đồng bộ hiển thị ở cùng vị trí theo chiều ngang với các slide sản phẩm bên dưới
+            Do mỗi slide cũng được bọc trong class "container".
+            Chứ đừng bọc thẻ h2 vào trong thẻ div gắn class "container" như này:
+            <div>
+                <h2>Các sản phẩm liên quan</h2>
+            </div>
+            $$$$Câu hỏi hỏi đắt giá: Vì sao lại thế???
+            =>Đơn giản là nó gây lỗi. Nếu ta làm thế thì phần debug sẽ báo lỗi như sau:
+            Uncaught TypeError TypeError: Cannot read properties of null (reading 'classList')
+                at <anonymous> (d:\TKWeb\DoAnTKWeb\Shoppi\users\javaScript\productDetailsPage.js:299:70)
+                at trigger (d:\TKWeb\DoAnTKWeb\Shoppi\users\vendor\js\src\dom\event-handler.js:289:15)
+                at triggerEvent (d:\TKWeb\DoAnTKWeb\Shoppi\users\vendor\js\src\carousel.js:316:27)
+                at completeCallBack (d:\TKWeb\DoAnTKWeb\Shoppi\users\vendor\js\src\carousel.js:362:7)
+                at execute (d:\TKWeb\DoAnTKWeb\Shoppi\users\vendor\js\src\util\index.js:226:51)
+                at handler (d:\TKWeb\DoAnTKWeb\Shoppi\users\vendor\js\src\util\index.js:247:5)
+            
+            Hậu quả là khiến cho hàm ẩn hiện nút chuyển slide bên mã javaScipt không
+            hoạt động được. Cụ thể là hàm này
+            document.addEventListener('DOMContentLoaded', function() {
+                const danhsachSP = document.getElementById('MucSPLienQuan');
+                const nutNextSP = danhsachSP.querySelector('.carousel-control-next');
+                const nutPrevSP = danhsachSP.querySelector('.carousel-control-prev');
+
+                danhsachSP.addEventListener('slid.bs.carousel', function() {
+                    // Kiểm tra nếu đang ở carousel-item đầu tiên
+                    if (danhsachSP.querySelector('.carousel-item:first-of-type').classList.contains('active')) {
+                        nutPrevSP.style.display = 'none'; // Ẩn nút prev
+                    } else {
+                        nutPrevSP.style.display = 'block'; // Hiện nút prev
+                    }
+
+                    // Kiểm tra nếu đang ở carousel-item cuối cùng
+                    if (danhsachSP.querySelector('.carousel-item:last-of-type').classList.contains('active')) {
+                        nutNextSP.style.display = 'none'; // Ẩn nút next
+                    } else {
+                        nutNextSP.style.display = 'block'; // Hiện nút next
+                    }
+                });
+            });
+            =>Không thể hiển thị nút prev dù ta đang ở slide nào.
+            Do nút slide ban đầu sẽ sở hữu display: none, giúp ẩn nút vì ta thiết lặp slide thứ nhất là
+            slide hiên thị đầu tiên khi ta load web lên. Khi ta nhấn nút next thì hàm javaScipt nói trên
+            sẽ hoạt động khiến nút prev hiện lại ở slide thứ 2. Nhưng do lỗi vì ta đặt thẻ h2 vào bên trong
+            thẻ div gắn "container" nên nó đã không hoạt động
+
+            Vậy lí do tại sao mà khi ta đặt thẻ h2 trong thẻ div gắn "container" thì lại bị lỗi
+            =>Đó có thể là do trong thẻ gắn "carousel-inner" thì 1 khi dùng thẻ div gắn "container"
+            nó sẽ coi đó là thẻ chính( tức chứa luôn cả các thẻ caurousel-item) luôn, nhưng không
+            thật ra ta chỉ dùng nó để chứa thẻ h2 thôi nên đâm ra bị lỗi 
+           
+
+            $$$$Câu hỏi đắt giá:Vậy sao ta không bọc all từ tiêu đề đến các slide vào 
+            cùng 1 thẻ div gắn "container"??
+            =>Đó là bởi nếu làm vậy sẽ xảy ra hiện tượng lỗi hiển thị khi ta nhấp vào nút chuyển slide
+            ( tức nút next hoặc nút prev). Việc này chỉ xảy ra khi sử dụng carousel thôi
+            nếu không sử dụng carousel thì ta cứ gộp chung các phần nội dung lại cùng 1 thẻ div gắn
+            class "container" là được. Vd như ở bên file carts.html thì
+            ta có thẻ <div id="GioHang"  class="container"> là thẻ gắn class "container" chung để
+            gồm 3 nội dung về: 
+            <div id="ThuocTinhSP">; <div id="AllSPGioHang"> lẫn <div id="TongTienThanhToan"> luôn
+            
+            Cụ thể, nếu ta nhấp vào nút next thì sản phẩm ở cuối slide trước và sản phẩm ở đầu slide sau 
+            sẽ dính lấy nhau. Còn nếu ta nhấp vào nút prev thì sản phẩm ở đầu slide sau và sản phẩm ở cuối
+            trước sẽ dính lấy nhau.
+            Có thể nói khoảng cách giữa các slide sẽ bằng 0 do đó dẵn tới hiện tượng 2 đầu của slide
+            sẽ dính lấy nhau khi nhấp vào nút chuyển đổi slide
+            Còn nếu ta tách từng container cho từng slide thì sẽ tạo ra khoảng cách giữa các slide
+            Ngăn chặn tình trạng 2 đầu slide bị dính lấy nhau khi nhấp vào nút chuyển đổi slide.
+            -->
+
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="sanPhamCard row">
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=002">
+                                    <img src="../imgs/ImgSanPham/dth2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Samsung Galaxy S24 Ultra Pro</h5>              
+                                        <p class="priceSanPham">28.890.000đ<span class="priceSafe"> 33.990.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch
+                                        </p>      
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 002</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=003">
+                                    <img src="../imgs/ImgSanPham/laptop1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Laptop Gaming MSI GF63 12UCX-841VN</h5>
+                                        <p class="priceSanPham">15.390.000đ<span class="priceSafe"> 17.990.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> i5-12450H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 003</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=004">
+                                    <img src="../imgs/ImgSanPham/ao1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Áo sơ mi TERI Tay lỡ có túi kèm Cà Vạt</h5>
+                                        <p class="priceSanPham">179.000đ<span class="priceSafe"> 250.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-palette"></i> Nâu/Đỏ/Trắng/Đen | <i class="fa-brands fa-sourcetree"></i> Hàn quốc | <i class="fa-solid fa-shirt"></i> Vải lụa
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 004</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=005">
+                                    <img src="../imgs/ImgSanPham/dth3.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Gaming Phone Asus Rog 3 Elite</h5>
+                                        <p class="priceSanPham">16.990.000₫<span class="priceSafe"> 22.990.000₫</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> Snap 865 | <i class="fa-solid fa-memory"></i> 12 GB/512 GB | <i class="fa-solid fa-mobile-screen"></i> 6.59 inch
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 005</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=006">
+                                    <img src="../imgs/ImgSanPham/mtBang1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Samsung Galaxy Tab S7 FE LTE 11 inch</h5>
+                                        <p class="priceSanPham">6.690.000<span class="priceSafe"> 9.900.000</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch 
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 006</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=007">
+                                    <img src="../imgs/ImgSanPham/laptop2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Laptop Acer Gaming Aspire 5 A515</h5>
+                                        <p class="priceSanPham">16.490.000đ<span class="priceSafe"> 20.490.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> i5-13420H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 007</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>           
+                    </div>
+                    <h5>Slide 1 của sản phẩm liên quan</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="sanPhamCard row">
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=003">
+                                    <img src="../imgs/ImgSanPham/laptop1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Laptop Gaming MSI GF63 12UCX-841VN</h5>
+                                        <p class="priceSanPham">15.390.000đ<span class="priceSafe"> 17.990.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> i5-12450H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 003</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=002">
+                                    <img src="../imgs/ImgSanPham/dth2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Samsung Galaxy S24 Ultra Pro</h5>              
+                                        <p class="priceSanPham">28.890.000đ<span class="priceSafe"> 33.990.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch
+                                        </p>      
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 002</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=004">
+                                    <img src="../imgs/ImgSanPham/ao1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Áo sơ mi TERI Tay lỡ có túi kèm Cà Vạt</h5>
+                                        <p class="priceSanPham">179.000đ<span class="priceSafe"> 250.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-palette"></i> Nâu/Đỏ/Trắng/Đen | <i class="fa-brands fa-sourcetree"></i> Hàn quốc | <i class="fa-solid fa-shirt"></i> Vải lụa
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 004</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=005">
+                                    <img src="../imgs/ImgSanPham/dth3.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Gaming Phone Asus Rog 3 Elite</h5>
+                                        <p class="priceSanPham">16.990.000₫<span class="priceSafe"> 22.990.000₫</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> Snap 865 | <i class="fa-solid fa-memory"></i> 12 GB/512 GB | <i class="fa-solid fa-mobile-screen"></i> 6.59 inch
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 005</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=006">
+                                    <img src="../imgs/ImgSanPham/mtBang1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Samsung Galaxy Tab S7 FE LTE 11 inch</h5>
+                                        <p class="priceSanPham">6.690.000<span class="priceSafe"> 9.900.000</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch 
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 006</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=007">
+                                    <img src="../imgs/ImgSanPham/laptop2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Laptop Acer Gaming Aspire 5 A515</h5>
+                                        <p class="priceSanPham">16.490.000đ<span class="priceSafe"> 20.490.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> i5-13420H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 007</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>            
+                    </div>
+                    <h5>Slide 2 của sản phẩm liên quan</h5>
+                </div>   
+            </div>
+
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="sanPhamCard row">
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=004">
+                                    <img src="../imgs/ImgSanPham/ao1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Áo sơ mi TERI Tay lỡ có túi kèm Cà Vạt</h5>
+                                        <p class="priceSanPham">179.000đ<span class="priceSafe"> 250.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-palette"></i> Nâu/Đỏ/Trắng/Đen | <i class="fa-brands fa-sourcetree"></i> Hàn quốc | <i class="fa-solid fa-shirt"></i> Vải lụa
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 004</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=002">
+                                    <img src="../imgs/ImgSanPham/dth2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Samsung Galaxy S24 Ultra Pro</h5>              
+                                        <p class="priceSanPham">28.890.000đ<span class="priceSafe"> 33.990.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch
+                                        </p>      
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 002</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=003">
+                                    <img src="../imgs/ImgSanPham/laptop1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Laptop Gaming MSI GF63 12UCX-841VN</h5>
+                                        <p class="priceSanPham">15.390.000đ<span class="priceSafe"> 17.990.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> i5-12450H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 003</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=005">
+                                    <img src="../imgs/ImgSanPham/dth3.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Gaming Phone Asus Rog 3 Elite</h5>
+                                        <p class="priceSanPham">16.990.000₫<span class="priceSafe"> 22.990.000₫</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> Snap 865 | <i class="fa-solid fa-memory"></i> 12 GB/512 GB | <i class="fa-solid fa-mobile-screen"></i> 6.59 inch
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 005</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=006">
+                                    <img src="../imgs/ImgSanPham/mtBang1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Samsung Galaxy Tab S7 FE LTE 11 inch</h5>
+                                        <p class="priceSanPham">6.690.000<span class="priceSafe"> 9.900.000</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch 
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 006</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4 col-xl-2">
+                            <div class="card">
+                                <a href="../productDetails/product-details.html?productid=007">
+                                    <img src="../imgs/ImgSanPham/laptop2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Laptop Acer Gaming Aspire 5 A515</h5>
+                                        <p class="priceSanPham">16.490.000đ<span class="priceSafe"> 20.490.000đ</span></p>
+                                        <p class="card-text">
+                                            <i class="fa-solid fa-microchip"></i> i5-13420H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                                        </p>
+                                    </div>
+                                </a>
+                                <form class="diChuotMuaNgay">
+                                    <p class="text-center">Mã 007</p>
+                                    <button type="button" onclick="chuyenTrangThanhToan2()">
+                                        <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                                    </button>
+                                </form>
+                            </div>
+                        </div>                  
+                    </div>
+                    <h5>Slide 3 của sản phẩm liên quan</h5>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <!--Phải thêm "display: none" cho nút prev. Nếu ta đặt slide thứ nhất là slide hiển thị khi vừa load web
+        Tức nó có thuộc tính "action". Tương tự, nếu ta đặt slide cuối là slide hiển thị khi vừa load web
+        thì ta phải thêm "display: none" cho nút next
+        Mục đích thêm "display: none" cho 1 nút là để ẩn nút đó đi
+        Vì hàm sự kiện load bên mã javaScipt sẽ không load khi vừa mới load web lên. Tức đang nói mã dưới đây:
+        document.addEventListener('DOMContentLoaded', function() {
+            const danhsachSP = document.getElementById('MucSPLienQuan');
+            const nutNextSP = danhsachSP.querySelector('.carousel-control-next');
+            const nutPrevSP = danhsachSP.querySelector('.carousel-control-prev');
+
+            danhsachSP.addEventListener('slid.bs.carousel', function() {
+                // Kiểm tra nếu đang ở carousel-item đầu tiên
+                if (danhsachSP.querySelector('.carousel-item:first-of-type').classList.contains('active')) {
+                    nutPrevSP.style.display = 'none'; // Ẩn nút prev
+                } else {
+                    nutPrevSP.style.display = 'block'; // Hiện nút prev
+                }
+
+                // Kiểm tra nếu đang ở carousel-item cuối cùng
+                if (danhsachSP.querySelector('.carousel-item:last-of-type').classList.contains('active')) {
+                    nutNextSP.style.display = 'none'; // Ẩn nút next
+                } else {
+                    nutNextSP.style.display = 'block'; // Hiện nút next
+                }
+            });
+        });
+        Lí do là vì:  Khi sử dụng document.addEventListener('DOMContentLoaded', function(){...} 
+        thì mã javaScipt bên trong nó sẽ chỉ được thực thi khi toàn bộ DOM đã được tải xong.
+        **Xem chi tiết bên file "productDetailsPage.js" ở folder "productDetails"**
+        Thế nên nó sẽ không thể chạy để kiểm tra nhằm loại bỏ đi nút prev khi vừa load web lên
+        nếu ta chọn slide thứ nhất là slide hiển thị khi vừa load web lên.
+        Hoặc nhằm loại bỏ đi nút next khi vừa load web lên
+        nếu ta chọn slide cuối cùng là slide hiển thị khi vừa load web lên.
+        Thế nên nếu rơi vào 1 trong 2 TH trên ta phải thêm "display: none" vào nút phù hợp
+        ở đây, ta chọn slide thứ nhất là slide hiển thị khi vừa load web lên
+        Nên ta phải thêm thêm "display: none" vào nút prev-->
+        <button style="display: none;" class="carousel-control-prev" type="button" data-bs-target="#MucSPLienQuan" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#MucSPLienQuan" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+    
+
+
+
+    <div id="MucDanhGiaNgMua">
+        <div class="container">
+            <h2>Đánh giá của người mua</h2>
+            
+            <div class="danhGiaNgMua">
+                <div class="ngMuaHang">
+                    <div class="thongTinNgMua">
+                        <img src="imgs/avatarNguoiMua/hauAvatar.jpg" alt="...">
+                        <div>
+                            <h4 class="tenNgMua">Bùi Phước Hậu</h4>
+                            <h4 class="soSao">Rate: 
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </h4>
+                        </div>   
+                    </div>
+                    <div class="thongTinMuaSam">
+                        <h6>20/05/2024</h6>
+                        <h6>Màu sắc: Xanh lá</h6>
+                    </div>
+                </div>
+                <div class="reviewHang">
+                    <p>Hàng đóng gói cẩn thận, mới dùng 3 tuần cũng chưa thấy có vấn đề j, yêu cầu xuất hoá đơn nhưng thấy, có nhắn tin cho shop nh k thấy trả lời</p>
+                </div>
+            </div>
+
+            <div class="danhGiaNgMua">
+                <div class="ngMuaHang">
+                    <div class="thongTinNgMua">
+                        <img src="imgs/avatarNguoiMua/toanAvatar.jpg" alt="...">
+                        <div>
+                            <h4 class="tenNgMua">Ngô Hữu Toàn</h4>
+                            <h4 class="soSao">Rate:
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </h4>
+                        </div>   
+                    </div>
+                    <div class="thongTinMuaSam">
+                        <h6>08/05/2024</h6>
+                        <h6>Màu sắc: Đen</h6>
+                    </div>
+                </div>
+                <div class="reviewHang">
+                    <p>Lần đầu mua hàng điện tử giá trị lớn trên này cũng cân nhắc lắm 
+                        Từ khâu hỏi thăm sản phẩm đến khâu hướng dẫn check sản phẩ m và đến lúc giao hàng ok cả
+                        Hi vọng chiếc điện thoại này sẽ mang lại nhiều hữu ích thật sự</p>
+                </div>
+            </div>
+
+            <div class="danhGiaNgMua">
+                <div class="ngMuaHang">
+                    <div class="thongTinNgMua">
+                        <img src="imgs/avatarNguoiMua/kienAvatar.jpg" alt="...">
+                        <div>
+                            <h4 class="tenNgMua">Nguyễn Trung Kiên</h4>
+                            <h4 class="soSao">Rate:
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </h4>
+                        </div>   
+                    </div>
+                    <div class="thongTinMuaSam">
+                        <h6>14/05/2024</h6>
+                        <h6>Màu sắc: Hồng</h6>
+                    </div>
+                </div>
+                <div class="reviewHang">
+                    <p>Giao hàng nhanh, 2 ngày HCM nhận dc .
+                        Giá rẻ hơn bên ngoài lại có vc giảm giá, mua được giá rất hời.
+                        Hàng có chống sốc, full seal, ngon lành cành đào. Quá tuyệt vời 9.5 điểm. 
+                        Yêu shopee ❤️❤️</p>
+                </div>
+            </div>
+
+            <div class="danhGiaNgMua">
+                <div class="ngMuaHang">
+                    <div class="thongTinNgMua">
+                        <img src="imgs/avatarNguoiMua/haoAvatar.jpg" alt="...">
+                        <div>
+                            <h4 class="tenNgMua">Nguyễn Nhật Hào</h4>
+                            <h4 class="soSao">Rate:
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </h4>
+                        </div>   
+                    </div>
+                    <div class="thongTinMuaSam">
+                        <h6>23/05/2024</h6>
+                        <h6>Màu sắc: Xanh biển</h6>
+                    </div>
+                </div>
+                <div class="reviewHang">
+                    <p>Vừa mua thì sản phẩm giảm giá, xu cà nà, không dui nên trừ 2 sao vậy. Chứ máy mới ko vấn đề gì 🥹</p>
+                </div>
+            </div>
+
+
+            <div class="danhGiaNgMua">
+                <div class="ngMuaHang">
+                    <div class="thongTinNgMua">
+                        <img src="imgs/avatarNguoiMua/duyAvatar.jpg" alt="...">
+                        <div>
+                            <h4 class="tenNgMua">Trần Quốc Tuấn Duy</h4>
+                            <h4 class="soSao">Rate:
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </h4>
+                        </div>   
+                    </div>
+                    <div class="thongTinMuaSam">
+                        <h6>03/05/2024</h6>
+                        <h6>Màu sắc: Trắng</h6>
+                    </div>
+                </div>
+                <div class="reviewHang">
+                    <p>Mua đợt sale 25.4 có voucher 1.5tr, ngoài ra trả góp bằng thẻ tín dụng trên shopee cũng rất thuận tiện.
+                        Điện thoại xịn, nguyên seal. Màu xanh ở ngoài đẹp hơn trong hình.
+                        Giao hàng từ HCM ra HN có 4 ngày mà lâu quá trời. Shop gửi hoá đơn điện tử một hôm sau khi nhận hàng. Bảo hàng tự động kích hoạt.</p>
+                </div>
+            </div>
+
+
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link">Prev</a>
+                    </li>
+                    <li class="page-item active"  aria-current="page">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>    
+
+    <div style="background-color: rgba(0, 0, 0, 0.8); height: 150px;" >
+    </div><!--Chỉ là 1 thẻ tạo khoảng trống màu đen thôi-->
+
+
+    <!--Khai báo Jquery để sử dụng các phương thức của Jquery. Vd như $(selector) và .each()
+    Còn nếu không cần dùng các phương thức của Jquery thì ta không cần phải khai báo Jquery chi cho
+    web load chậm hơn.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="../javaScript/productDetailsPage.js"></script>
+    <script src="../javaScript/script.js"></script>
+
+</body>

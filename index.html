@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendor/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="vendor/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/homePage.css">
+    <title>Trang chủ</title>
+    <link rel="icon" type="image/png" href="imgs/logoWeb/logoIConWeb.png">
+</head>
+<body>
+    <header>
+        <!--Ta có thể viết nhanh các mã CSS thông qua thuộc tính style ngay trong mã html-->
+        <div style="background-color: white; height: 106px;" >
+        </div><!--Chỉ là 1 thẻ tạo khoảng trống màu trắng thôi-->
+
+        <nav id="cuonXuong" class="navbar navbar-expand-xl navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/logoWeb/logoChinh.png" height="80" width="80" alt="..."> SHOPPI
+                </a>
+                <!--Lớp "navbar-brand" là một lớp CSS trong Bootstrap được sử dụng để định kiểu cho 
+                phần tử hiển thị logo hoặc tên thương hiệu của trang web trong thanh điều hướng (navbar). 
+                Thường thì lớp này được áp dụng cho một thẻ liên kết (<a>) hoặc thẻ tiêu đề (<h1>) để làm nổi bật 
+                thương hiệu của trang web.-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMucMenu" aria-controls="navbarMucMenu" aria-expanded="false" aria-label="Chuyen doi Trang Thai Menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>    
+                <div id="navbarMucMenu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mb-4 mb-xl-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-people-roof"></i> Gia dụng
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Tủ lạnh</a></li>
+                                <li><a class="dropdown-item" href="#">Mày lạnh</a></li>
+                                <li><a class="dropdown-item" href="#">Bếp</a></li>
+                                <li><a class="dropdown-item" href="#">Lò vi sóng</a></li>
+                                <li><a class="dropdown-item" href="#">Máy giặt</a></li>
+                                <li><a class="dropdown-item" href="#">Bình đun nước</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-shirt"></i> Thời trang
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Quần áo</a></li>
+                                <li><a class="dropdown-item" href="#">Giày Dép</a></li>
+                                <li><a class="dropdown-item" href="#">Túi xách</a></li>
+                                <li><a class="dropdown-item" href="#">Phụ kiện</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-mobile-screen-button"></i> Điện tử
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Điện thoại</a></li>
+                                <li><a class="dropdown-item" href="#">Laptop</a></li>
+                                <li><a class="dropdown-item" href="#">Máy tính bảng</a></li>
+                                <li><a class="dropdown-item" href="#">PC</a></li>
+                                <li><a class="dropdown-item" href="#">Console</a></li>
+                                <li><a class="dropdown-item" href="#">Bàn phím</a></li>
+                                <li><a class="dropdown-item" href="#">Tai nghe</a></li>
+                                <li><a class="dropdown-item" href="#">Khác</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form role="search" class="d-flex me-auto">
+                        <input class="form-control me-sm-2" type="search" name="timKiemSanPham" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="carts/shopping-cart.html">
+                                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="transactionHistory/order-history.html">Đơn hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logIn/auth.html">Đăng nhập</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--
+    `me-auto` trong Bootstrap: giúp làm phần tử gắn thẻ này nằm ở bên trái
+    ( tương đương với 'me' trong 'me-auto') và làm all phần tử ở đằng sau trên cùng 1 dòng
+    bị đẩy về phía bên phải( tương đương với 'auto' trong 'me-auto')
+    Ở đây, thì có thể coi 'me' chính là thẻ <ul> trên và 'auto' chính là thẻ <form>
+    thế nên các thẻ nằm đăng sau thẻ <ul> và nằm cùng dòng với <ul> như thẻ <form>
+    sẽ bị đẩy về phía bên phải
+    =>Điều này giúp căn chỉnh phần tử tiếp theo( ở đây thẻ form) sang bên phải của phần tử cha của nó
+    ( ở đây đang nói đến <div class="collapse navbar-collapse" id="navbarMucMenu"> )
+    mà không cần sử dụng các giải pháp CSS khác như float hoặc margin.
+    
+    $$$$Câu hỏi đắt giá: Tôi có cần gắn thêm <nav-link> cho các thẻ <a> nhỏ bên trong "thẻ <ul> 
+    được gắn thuộc tính 'dropdown-menu'" không??
+    Tức đang nói các thẻ <a> như này:
+        <li><a class="dropdown-item" href="#">Quần áo</a></li>
+        <li><a class="dropdown-item" href="#">Giày Dép</a></li>
+        <li><a class="dropdown-item" href="#">Túi xách</a></li>
+        <li><a class="dropdown-item" href="#">Phụ kiện</a></li>
+    Thuộc
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-shirt"></i> Thời trang
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Quần áo</a></li>
+            <li><a class="dropdown-item" href="#">Giày Dép</a></li>
+            <li><a class="dropdown-item" href="#">Túi xách</a></li>
+            <li><a class="dropdown-item" href="#">Phụ kiện</a></li>
+        </ul>
+    </li>
+    ==>>Không, bạn không cần phải gắn thêm lớp `nav-link` cho các thẻ `<a>` nhỏ bên trong `dropdown-menu`.
+    Lớp `dropdown-item` đã đủ để xác định các mục menu trong dropdown và chúng sẽ tự động được 
+    thiết kế để phản ánh kiểu dáng của các liên kết trong thanh điều hướng chính.
+    Do đó, cấu trúc HTML bạn đã cung cấp là hoàn toàn đúng và không cần thêm lớp `nav-link` 
+    cho các thẻ `<a>` trong `dropdown-menu`. 
+    Các mục menu sẽ hiển thị đúng kiểu dáng và hành vi mà bạn mong đợi khi bạn sử dụng lớp `dropdown-item`.
+    -->
+
+    <div id="TrinhChieuHinhAnh" class="carousel slide" data-bs-theme="dark" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#TrinhChieuHinhAnh" data-bs-slide-to="0" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#TrinhChieuHinhAnh" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#TrinhChieuHinhAnh" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="imgs/bannerImg/bannerDienTu.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-lg-block">
+                    <h5>Siêu safe điện tử và nhiều thứ khác</h5>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <img src="imgs/bannerImg/bannerGiaDung.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-lg-block">
+                    <h5>Nồi chiên không dầu Sunhouse</h5>
+                    <p>Thiết bị đa chức năng được thiết kế để nấu các món ăn một cách nhanh chóng và tiện lợi mà không cần sử dụng dầu mỡ, giúp giảm lượng chất béo và calo trong các món ăn.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imgs/bannerImg/bannerThoiTrang.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-lg-block">
+                    <h5>Áo khoác thể thao Adidas</h5>
+                    <p>Được thiết kế với sự chú trọng vào sự thoải mái, tính linh hoạt và phong cách đặc trưng của thương hiệu, các sản phẩm áo khoác thể thao Adidas đã trở thành biểu tượng của phong cách và sự tự tin cho cả nam và nữ.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#TrinhChieuHinhAnh" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#TrinhChieuHinhAnh" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <article id="MucPhanLoaiSP" class="container-fluid">
+        <div class="text-center pt-5">
+            <h1>Phân loại sản phẩm</h1>
+        </div>
+        <div class="row d-flex">
+            <div class="col-xl-1 order-xl-1 text-center">
+                <h2 class="mt-xl-5">Danh Mục</h2>
+            </div>
+
+            <div class="col-xl-1 order-xl-3 text-center">
+                <h2 class="mt-xl-5">Phổ biến</h2>
+            </div>
+
+            <div class="col-xl-10 order-xl-2">
+                <div id="danhMucSanPham" class="row">
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-laptop"></i>
+                            <h4>Laptop</h4>
+                            <p>126 sản phẩm</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <h4>Điện thoại</h4>
+                            <p>241 sản phẩm</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-shirt"></i>
+                            <h4>Quần Áo</h4>
+                            <p>351 listings</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-headphones-simple"></i>
+                            <h4>Tai nghe</h4>
+                            <p>279 sản phẩm</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-keyboard"></i>
+                            <h4>Bàn phím</h4>
+                            <p>154 listings</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-computer-mouse"></i>
+                            <h4>Chuột</h4>
+                            <p>253 sản phẩm</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <h4>Túi xách</h4>
+                            <p>169 sản phẩm</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-tablet"></i>
+                            <h4>MT Bảng</h4>
+                            <p>146 sản phẩm</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-fire-burner"></i>
+                            <h4>Bếp</h4>
+                            <p>104 sản phẩm</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <h4>Console</h4>
+                            <p>131 sản phẩm</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-ring"></i>
+                            <h4>Nhẫn</h4>
+                            <p>172 sản phẩm</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <a href="#" class="noiDungDanhMuc">
+                            <i class="fa-solid fa-stopwatch"></i>
+                            <h4>Đồng hồ</h4>
+                            <p>58 sản phẩm</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    
+
+    <article id="MucSanPhamBanChay" class="container">
+        <div id="tieuDeSPBanChay">
+            <i class="fa-solid fa-fire"></i>
+            <h3> Sản phẩm bán chạy nhất:</h3>
+        </div>
+        <div class="sanPhamCard row">
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=001">
+                        <img src="imgs/ImgSanPham/dth1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">iPhone 13 128GB Chính hãng VN/A</h5>
+                            <p class="priceSanPham">13.690.000đ<span class="priceSafe"> 18.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 001</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                    <!--Xem giải thich ở bên mã javaScript ở function tên "chuyenTrangThanhToan1"
+                    Để biết vì sao lại không sử dụng thẻ <a> để chuyển hướng trang?
+                    Hay vì sao lại sử dụng thẻ <form> để làm gì?-->
+                    <!--Xem giải thích tại "Câu hỏi đắt giá 3" ở mục "Câu hỏi đắt giá phần 0"
+                    nằm trong ghi chú "Đồ án TK Web Phần 1"
+                    về việc ta không nên đặt thẻ <a> bao bọc toàn bộ nội dung sản phẩm 
+                    ở các sản phẩm này.
+                    Dù trong nhiều trường hợp thiết kế giao diện web, việc bao bọc một thẻ `<div>` 
+                    chứa nội dung sản phẩm bằng thẻ `<a>`( hay TH thẻ <a> bọc trực tiếp nội dung sản phẩm) 
+                    giúp biến toàn bộ khu vực đó thành một liên kết là 1 việc rất phổ biến. 
+                    Điều này thường được sử dụng khi bạn muốn người dùng có thể nhấp vào bất kỳ đâu 
+                    trong khu vực đó để chuyển đến trang chi tiết sản phẩm.
+                    Ngắn gọn phần kết luận đó là:
+                    ==>>Chốt Lí do Tại sao không sử dụng thẻ `<a>` bao bọc toàn bộ trong 1 số TH 
+                    như ở đây???
+                    Vì Nếu sử dụng thẻ `<a>` để bao bọc toàn bộ thẻ `<div class="card">`, 
+                    bạn không thể đặt thẻ `<form>` bên trong thẻ `<a>` được, 
+                    vì HTML không cho phép thẻ `<form>` nằm bên trong thẻ `<a>`. 
+                    Vậy, cấu trúc hiện tại của bạn là hợp lý nếu mục đích của bạn là giữ liên kết 
+                    và hành động "Mua Ngay" riêng biệt. 
+                    Điều quan trọng nhất cũng chỉ là
+                    hãy chắc chắn rằng các phần tử của bạn hoạt động như mong đợi 
+                    và không xung đột với nhau.
+
+                    Ngoài ra, thành phần nút "Mua ngay" có thể được coi là 1 phần tách biệt riêng với
+                    thẻ sản phẩm nên ta đặt bên ngoài thẻ <a> là hợp lí rồi.
+                    Còn phẩn nội dung sản phẩm là hình sản phẩm, tên sản phẩm, giá sản phẩm, chi tiết
+                    sản phẩm vẫn được nằm trong thẻ <a> mà. 
+                    Chủ yếu ta dùng thẻ <a> bọc toàn bộ nội dung để khi click vào bất kỳ 
+                    phần nội dung nào của sản phẩm thì ta sẽ được chuyển sang trang chi tiết 
+                    của sản phẩm đó thôi.
+                    Mà phần nút "Mua ngay" đâu có thuộc nội dung sản phẩm đâu, với ta cũng đâu cần
+                    click vào phần nút "Mua ngay" để nó chuyển sang trang chi tiết của sản phẩm đó
+                    đúng không, vì thật chất nút "Mua ngay" khi click vào thì ta muốn nó giúp ta
+                    chuyển sang trang giỏ hàng và đồng thời thêm sản phẩm đó vào giỏ hàng để mua mà.
+                    -->
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=002">
+                        <img src="imgs/ImgSanPham/dth2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Samsung Galaxy S24 Ultra Pro</h5>              
+                            <p class="priceSanPham">28.890.000đ<span class="priceSafe"> 33.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch
+                            </p>      
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 002</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=003">
+                        <img src="imgs/ImgSanPham/laptop1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop Gaming MSI GF63 12UCX-841VN</h5>
+                            <p class="priceSanPham">15.390.000đ<span class="priceSafe"> 17.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> i5-12450H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 003</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=004">
+                        <img src="imgs/ImgSanPham/ao1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Áo sơ mi TERI Tay lỡ có túi kèm Cà Vạt</h5>
+                            <p class="priceSanPham">179.000đ<span class="priceSafe"> 250.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-palette"></i> Nâu/Đỏ/Trắng/Đen | <i class="fa-brands fa-sourcetree"></i> Hàn quốc | <i class="fa-solid fa-shirt"></i> Vải lụa
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 004</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=005">
+                        <img src="imgs/ImgSanPham/dth3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gaming Phone Asus Rog 3 Elite</h5>
+                            <p class="priceSanPham">16.990.000₫<span class="priceSafe"> 22.990.000₫</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Snap 865 | <i class="fa-solid fa-memory"></i> 12 GB/512 GB | <i class="fa-solid fa-mobile-screen"></i> 6.59 inch
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 005</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=006">
+                        <img src="imgs/ImgSanPham/mtBang1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Samsung Galaxy Tab S7 FE LTE 11 inch</h5>
+                            <p class="priceSanPham">6.690.000<span class="priceSafe"> 9.900.000</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch 
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 006</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>              
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=007">
+                        <img src="imgs/ImgSanPham/laptop2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop Acer Gaming Aspire 5 A515</h5>
+                            <p class="priceSanPham">16.490.000đ<span class="priceSafe"> 20.490.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> i5-13420H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 007</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=008">
+                        <img src="imgs/ImgSanPham/tulanh1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Tủ lạnh Panasonic NR-CY558GXVN</h5>
+                            <p class="priceSanPham">23.000.000₫<span class="priceSafe"> 29.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-ruler-combined"></i> 171.4/77 cm | <i class="fa-solid fa-bottle-water"></i>491 lít | <i class="fa-solid fa-plug-circle-bolt"></i> 1.22 kW/ngày
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 008</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="#" class="nutXemThemChuyenTrang">
+                Xem thêm
+            </a>
+        </div>
+
+    </article>
+
+
+
+    <article id="MucSanPhamMoi" class="container">
+        <div id="tieuDeSPMoi">
+            <i class="fa-solid fa-newspaper"></i>
+            <h3> Sản phẩm mới nhất:</h3>
+        </div>
+        
+        <div class="sanPhamCard row">
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=001">
+                        <img src="imgs/ImgSanPham/dth1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">iPhone 13 128GB Chính hãng VN/A</h5>
+                            <p class="priceSanPham">13.690.000đ<span class="priceSafe"> 18.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 001</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                    <!--Xem giải thich ở bên mã javaScipt ở funtion tên "chuyenTrangThanhToan1"
+                    Để biết vì sao lại không sử dụng thẻ <a> để chuyển hướng trang?
+                    Hay vì sao lại sử dụng thẻ <form> để làm gì?-->
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=002">
+                        <img src="imgs/ImgSanPham/dth2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Samsung Galaxy S24 Ultra Pro</h5>              
+                            <p class="priceSanPham">28.890.000đ<span class="priceSafe"> 33.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch
+                            </p>      
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 002</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=003">
+                        <img src="imgs/ImgSanPham/laptop1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop Gaming MSI GF63 12UCX-841VN</h5>
+                            <p class="priceSanPham">15.390.000đ<span class="priceSafe"> 17.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> i5-12450H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 003</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=004">
+                        <img src="imgs/ImgSanPham/ao1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Áo sơ mi TERI Tay lỡ có túi kèm Cà Vạt</h5>
+                            <p class="priceSanPham">179.000đ<span class="priceSafe"> 250.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-palette"></i> Nâu/Đỏ/Trắng/Đen | <i class="fa-brands fa-sourcetree"></i> Hàn quốc | <i class="fa-solid fa-shirt"></i> Vải lụa
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 004</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=005">
+                        <img src="imgs/ImgSanPham/dth3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gaming Phone Asus Rog 3 Elite</h5>
+                            <p class="priceSanPham">16.990.000₫<span class="priceSafe"> 22.990.000₫</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Snap 865 | <i class="fa-solid fa-memory"></i> 12 GB/512 GB | <i class="fa-solid fa-mobile-screen"></i> 6.59 inch
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 005</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=006">
+                        <img src="imgs/ImgSanPham/mtBang1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Samsung Galaxy Tab S7 FE LTE 11 inch</h5>
+                            <p class="priceSanPham">6.690.000<span class="priceSafe"> 9.900.000</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch 
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 006</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>              
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=007">
+                        <img src="imgs/ImgSanPham/laptop2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop Acer Gaming Aspire 5 A515</h5>
+                            <p class="priceSanPham">16.490.000đ<span class="priceSafe"> 20.490.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> i5-13420H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 007</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=008">
+                        <img src="imgs/ImgSanPham/tulanh1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Tủ lạnh Panasonic NR-CY558GXVN</h5>
+                            <p class="priceSanPham">23.000.000₫<span class="priceSafe"> 29.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-ruler-combined"></i> 171.4/77 cm | <i class="fa-solid fa-bottle-water"></i>491 lít | <i class="fa-solid fa-plug-circle-bolt"></i> 1.22 kW/ngày
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 008</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="#" class="nutXemThemChuyenTrang">
+                Xem thêm
+            </a>
+        </div>
+
+    </article>
+
+
+
+    <article id="MucSanPhamKhuyenMai" class="container">
+        <div id="tieuDeSPKhuyenMai">
+            <i class="fa-solid fa-piggy-bank"></i>
+            <h3>Sản phẩm khuyến mãi:</h3>
+        </div>
+        
+        <div class="sanPhamCard row">
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=001">
+                        <img src="imgs/ImgSanPham/dth1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">iPhone 13 128GB Chính hãng VN/A</h5>
+                            <p class="priceSanPham">13.690.000đ<span class="priceSafe"> 18.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 001</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                    <!--Xem giải thich ở bên mã javaScipt ở funtion tên "chuyenTrangThanhToan1"
+                    Để biết vì sao lại không sử dụng thẻ <a> để chuyển hướng trang?
+                    Hay vì sao lại sử dụng thẻ <form> để làm gì?-->
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=002">
+                        <img src="imgs/ImgSanPham/dth2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Samsung Galaxy S24 Ultra Pro</h5>              
+                            <p class="priceSanPham">28.890.000đ<span class="priceSafe"> 33.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch
+                            </p>      
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 002</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=003">
+                        <img src="imgs/ImgSanPham/laptop1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop Gaming MSI GF63 12UCX-841VN</h5>
+                            <p class="priceSanPham">15.390.000đ<span class="priceSafe"> 17.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> i5-12450H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 003</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=004">
+                        <img src="imgs/ImgSanPham/ao1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Áo sơ mi TERI Tay lỡ có túi kèm Cà Vạt</h5>
+                            <p class="priceSanPham">179.000đ<span class="priceSafe"> 250.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-palette"></i> Nâu/Đỏ/Trắng/Đen | <i class="fa-brands fa-sourcetree"></i> Hàn quốc | <i class="fa-solid fa-shirt"></i> Vải lụa
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 004</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=005">
+                        <img src="imgs/ImgSanPham/dth3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gaming Phone Asus Rog 3 Elite</h5>
+                            <p class="priceSanPham">16.990.000₫<span class="priceSafe"> 22.990.000₫</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Snap 865 | <i class="fa-solid fa-memory"></i> 12 GB/512 GB | <i class="fa-solid fa-mobile-screen"></i> 6.59 inch
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 005</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=006">
+                        <img src="imgs/ImgSanPham/mtBang1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Samsung Galaxy Tab S7 FE LTE 11 inch</h5>
+                            <p class="priceSanPham">6.690.000<span class="priceSafe"> 9.900.000</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> Exynos 2200 | <i class="fa-solid fa-memory"></i> 8 GB/128 GB | <i class="fa-solid fa-mobile-screen"></i> 6.4 inch 
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 006</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>              
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=007">
+                        <img src="imgs/ImgSanPham/laptop2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop Acer Gaming Aspire 5 A515</h5>
+                            <p class="priceSanPham">16.490.000đ<span class="priceSafe"> 20.490.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-microchip"></i> i5-13420H | <i class="fa-solid fa-memory"></i> 8 GB/512 GB | <i class="fa-solid fa-display"></i> 15.6 inch 
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 007</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <a href="productDetails/product-details.html?productid=008">
+                        <img src="imgs/ImgSanPham/tulanh1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Tủ lạnh Panasonic NR-CY558GXVN</h5>
+                            <p class="priceSanPham">23.000.000₫<span class="priceSafe"> 29.990.000đ</span></p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-ruler-combined"></i> 171.4/77 cm | <i class="fa-solid fa-bottle-water"></i>491 lít | <i class="fa-solid fa-plug-circle-bolt"></i> 1.22 kW/ngày
+                            </p>
+                        </div>
+                    </a>
+                    <form class="diChuotMuaNgay">
+                        <p class="text-center">Mã 008</p>
+                        <button type="button" onclick="chuyenTrangThanhToan1()">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="#" class="nutXemThemChuyenTrang">
+                Xem thêm
+            </a>
+        </div>
+
+    </article>
+
+
+
+    <footer id="MucBanQuyen">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-8">
+                    <h2>About Catalog-Z</h2>
+                    <p>Catalog-Z is free Bootstrap 5 Alpha 2 HTML Template for video and photo websites. You can freely use this TemplateMo layout for a front-end integration with any kind of CMS website.</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <h2>Our Links</h2>
+                    <div class="d-flex">
+                        <a href="#" class="iconMangXaHoi">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="iconMangXaHoi">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="iconMangXaHoi">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="iconMangXaHoi">
+                            <i class="fa-brands fa-google-plus-g"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="thongTinBanQuyen" class="row">
+                <div class="col-md-6 col-lg-8">
+                    <p>Copyright 2024 Catalog-Z Company. All rights reserved.</p>    
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <p>Designed by Team8TKWeb</p>
+                </div>
+            </div>
+
+        </div>
+        
+    </footer>
+
+
+    <script src="javaScript/script.js"></script>
+</body>
+</html>

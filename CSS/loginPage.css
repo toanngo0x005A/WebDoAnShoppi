@@ -1,0 +1,67 @@
+#backgroundLogIn{
+    background-image: url('../login/imgs/nenLogin.jpg'); 
+    /*Tương tự như thẻ <img> ta có thể dùng link viết tắt nếu nó nằm cùng folder chương trình*/
+    background-size: cover; /* Hiển thị hình ảnh đủ kích thước để lấp đầy phần nền */
+    background-position: center; /* Căn giữa hình ảnh */
+    height: 100vh; /* Chiều cao bằng 100% chiều cao của viewport.
+    Ta có thể dùng 800px để tránh dùng đơn vị vh. Nhưng ở đây nó cũng không ảnh hưởng hưởng lắm nên có thể dùng vh cũng được*/
+    width: 100%; /* Lấp đầy chiều rộng của trang */ 
+}
+
+#backgroundLogIn .card input{
+    border-color:green;
+    /*Làm all thẻ input nằm trong card thuộc thẻ id "backgourndLogIn"
+    có màu xanh lá cây. Nhưng do độ dày border nhỏ
+    khi nhìn kĩ sẽ thấy nó màu xanh lá cây.
+    Lí do đổi là vì màu mặc định của thẻ input là xám nhạt
+    bị hòa lẫn vào màu trắng của nền làm ta khó thấy khung input 
+    */ 
+}
+
+#lopPhuNenLogIn{
+    height: 100%;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.4);
+    /*Chú ý: Cần phải có phần Độ mờ cho màu nền lớp phủ để ta có thể nhìn xuyên qua màu nền mà thấy được hình nền( hay nội dung) bên dưới. 
+    Nếu không có thì màu nền sẽ che hết và ta sẽ không thấy hình nên( hay nội dung) bên dưới luôn.
+    */
+    border-radius: 10px;
+    border: none;
+}
+@media( min-width: 992px){
+    #lopPhuNenLogIn{
+        height: 90%;
+        width: 70%;
+        border: 1.5px blue solid;
+    }
+}
+@media( min-width: 1200px){
+    #lopPhuNenLogIn{
+        height: 80%;
+        width: 60%;
+        border: 3px green solid;
+    }
+}
+
+
+
+.giupCanChinhNutAnHienMK{
+    position: relative;
+}
+
+.nutAnHienMK{
+    position: absolute;
+    right: 3%;
+    transform: translateY(-130%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.nutAnHienMK i {
+    color: #777;
+}
+.nutAnHienMK:hover i {
+    color: #333;
+}

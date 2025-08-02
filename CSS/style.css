@@ -1,0 +1,335 @@
+/*Các selector trong file "style.css" này đều sẽ được dùng chung 
+cho all các trang web( tức các file html) nằm trong folder "user"*/
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*####Thanh Menu chính:*/
+#khoangTrongWhite{
+    height: 106px; 
+    width: 100%;
+}
+
+#cuonXuong{
+    position: fixed; 
+    width: 100%;    
+    background-color: white;
+    top: 0; 
+    z-index: 1000; 
+}
+
+.navbar-brand{
+    color:limegreen;
+    font-size: 1.75em;
+}
+
+#navbarMucMenu .nav-item > *{
+    margin-right: 0.5em;
+    color:chartreuse;
+}
+
+#navbarMucMenu .nav-item:hover > *{
+    color: dodgerblue;
+}
+
+/*Nếu nhiều điều kiện @media cùng thỏa thì trong các điều kiện đó, điều kiện @media nào ở sau cùng
+sẽ được áp dụng
+Tức có thể hiểu điều kiện @media ở sau sẽ được ưu tiên hơn.*/
+@media (min-width: 1200px){
+    #navbarMucMenu input{
+        width: 12vw;
+    }
+}
+@media (min-width: 1300px){
+    #navbarMucMenu input{
+        width: 19vw;
+    }
+}
+@media (min-width: 1400px) {
+    #navbarMucMenu input{
+        width: 25vw;
+    }
+}
+/*Nếu muốn ĐỒNG NHẤT ĐIỀU KIỆN @MEDIA VỚI ĐIỀU KIỆN BREAKPOINT KÍCH THƯỚC MÀN HÌNH CỦA BOOTSTRAP
+thì ta nên làm như cách trên.
+Tức đặt điều kiện mid-width thôi bỏ đi max-width và đặt "điều kiện có mid-width thỏa cao hơn"
+ở đằng sau các "điều kiện có mid-width thỏa thấp hơn"
+Vì như đã nói ở trên "Nếu nhiều điều kiện @media cùng thỏa thì trong các điều kiện đó, 
+điều kiện @media nào ở sau cùng sẽ được áp dụng".
+Như ở mã trên, ta có thể hiểu mã code đơn giản như sau:
+TH1 1400px ≤ [giá trị]: thực hiện 'width: 25vw'
+TH2 1300px ≤ [giá trị] < 1400px: thực hiện 'width: 19vw'
+TH3 1200px ≤ [giá trị] < 1300px: thực hiện 'width: 12vw'
+Ở đây ta đã đồng nhất điều kiện với xll( tức ≥ 1400px) thành công
+*/
+/*LÍ DO TA MUỐN ĐỒNG NHẤT VÀ LỖI VÔ CÙNG ĐẶC BIỆT 
+KHI CỐ ĐỒNG NHẤT ĐỒNG NHẤT ĐIỀU KIỆN @MEDIA VỚI ĐIỀU KIỆN BREAKPOINT KÍCH THƯỚC MÀN HÌNH CỦA BOOTSTRAP 
+Khi mã code kết hợp với các [BREAKPOINT kích thước màn hình]( tức sm, md, lg, xl, xll) trong bootstrap
+thi khi ta dùng cấu trúc điều kiện @media, ta thường cố đồng nhất với các BREAKPOINT nói trên
+Tức vd như xll có điều kiện là ≥ 1400px. Thì ta cũng muốn đồng nhất nó với điều kiện trong @media để
+chúng có điều kiện thay đổi giống nhau, nhằm giúp chúng thay đổi trên cùng 1 điều kiện thôi.
+***Xem hình ảnh minh họa của việc đồng nhất nói trên
+ở ghi chú "ĐỒNG NHẤT ĐIỀU KIỆN @MEDIA VỚI ĐIỀU KIỆN BREAKPOINT KÍCH THƯỚC MÀN HÌNH CỦA BOOTSTRAP"***
+Và ta nên biết không phải tự nhiên những người tạo ra Bootstrap lại chọn 
+các [BREAKPOINT kích thước màn hình] ở các vị trí px cụ thể đó. 
+Họ chọn các vị trí px đó vì nó sẽ là các mốc dễ xảy ra thay đổi bố cục nhất cũng như họ đã 
+tính toán hết cả những thiết bị sẽ sở hữu kích thước màn hình ở khoảng nào và chia ra hợp lí nhất có thể.
+***Xem hình ảnh minh họa của việc đồng nhất nói trên
+ở ghi chú "ĐỒNG NHẤT ĐIỀU KIỆN @MEDIA VỚI ĐIỀU KIỆN BREAKPOINT KÍCH THƯỚC MÀN HÌNH CỦA BOOTSTRAP"***
+Đó là lí do quan trọng khiến ta muốn ĐỒNG NHẤT ĐIỀU KIỆN CỦA @MEDIA VỚI ĐIỀU KIỆN BREAKPOINTG KÍCH THƯỚC 
+MÀN HÌNH CỦA BOOTSTRAP
+
+
+
+Vì thế nên ta sẽ thường không ghi như này:
+@media (min-width: 1400px) {
+    #navbarMucMenu input{
+        width: 25vw;
+    }
+}
+@media (min-width: 1300px) and (max-width: 1400px) {
+    #navbarMucMenu input{
+        width: 19vw;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1300px) {
+    #navbarMucMenu input{
+        width: 12vw;
+    }
+}
+Vì khi đó điều kiện của chúng sẽ không giống nhau
+Vd như ở kích thước màn hình 1400px thì lúc đó xll vẫn thỏa
+nhưng điều kiện min-width: 1400px sẽ không còn được áp dụng nữa
+dù min-width: 1400px có nghĩa là 1400px ≤ [x]
+Lí do là bởi điều kiện [(min-width: 1300px) and (max-width: 1400px)] đã được áp dụng
+Do điều kiện đó có nghĩa là 1300px ≤ [x] ≤ 1400px và vì nó ở sau điều kiện min-width: 1400px
+nên dĩ nhiên các lệnh trong điều kiện 1300px ≤ [x] ≤ 1400px sẽ được áp dụng chồng lên
+nếu chúng có cùng thuộc tính ở cùng 1 selector, ở đây đang ám chỉ thuộc tính 'width'
+thực hiện trên cùng 1 selector "#navbarMucMenu input".
+=>Nếu kích thước màn hình ở 1400px thì "width: 19vw;" của [(min-width: 1300px) and (max-width: 1400px)] 
+sẽ được áp dụng cho selector "#navbarMucMenu input" 
+chứ không phải áp dụng "width: 25vw;" của điều kiện (min-width: 1400px).
+
+Ý tôi muốn nói ở đây là ta đang muốn đồng nhất (min-width: 1400px) với điều kiện của xll( tức ≥ 1400px)
+nhưng khi ở kích thước màn hình 1400px thì điều kiện (min-width: 1400px) dù vẫn thỏa
+nhưng nó đã bị điều kiện [(min-width: 1300px) and (max-width: 1400px)] đá đít vì cũng thỏa 
+nhưng [(min-width: 1300px) and (max-width: 1400px)] được viết ở sau (min-width: 1400px) nên được ưu tiên hơn.
+
+Thế nên ta phải tìm cách để đồng nhất chúng. Nhưng cách dưới đây không phải là cách ta nên xài: 
+Đây là "LỖI VÔ CÙNG ĐẶC BIỆT KHI CỐ ĐỒNG NHẤT ĐỒNG NHẤT ĐIỀU KIỆN @MEDIA VỚI 
+ĐIỀU KIỆN BREAKPOINT KÍCH THƯỚC MÀN HÌNH CỦA BOOTSTRAP"
+@media (min-width: 1400px) {
+    #navbarMucMenu input{
+        width: 25vw;
+    }
+}
+@media (min-width: 1300px) and (max-width: 1399px) {
+    #navbarMucMenu input{
+        width: 19vw;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1299px) {
+    #navbarMucMenu input{
+        width: 12vw;
+    }
+}
+Vì lí do đơn giản là: nó bị trống 1 khoảng trống ở giữa các điều kiện
+Cụ thể hãy thử nhìn 2 điều kiện đầu tiên:
+@media (min-width: 1400px) và [(min-width: 1300px) and (max-width: 1399px)]
+Thì nhìn sơ ta sẽ không thấy nó trống ở khoảng nào
+Nhưng nhìn kĩ ta sẽ thấy điều kiện min-width: 1400px là: 1400px ≤ [x]
+Còn điều kiện (min-width: 1300px) and (max-width: 1399px) là: 1300px ≤ [x] ≤ 1399
+Tức nó bị trống các giá trị số không nguyên từ 1399 đến 1400. Vd như 1399.5, 1399.28, 1399.73,...
+Tương tự với điều kiện [(min-width: 1300px) and (max-width: 1399px)] và [(min-width: 1200px) and (max-width: 1299px)]
+thì sẽ trống các giá trị không nguyên từ 1299 đến 1300.
+Điều này có thể sẽ dẵn đến lỗi không đáng cố. 
+Đặc biệt là khi ta kéo tab của trình duyệt trên máy tính nhỏ lại hoặc lớn hơn( khi làm thế thì cũng 
+được coi là kích thước màn hình thay đổi) thì có thể lướt qua các giá trị trên và dẵn dến lỗi.
+
+Ở đây thì sẽ là trường hợp không bị lỗi dù ta có làm như mã code trên nhưng ta nên tránh trường hợp ngay trên
+càng xa càng tốt vì xui thì lỗi khá là khó phát hiện
+*/
+/*####End*/
+
+
+
+
+/*####CẤU HÌNH CHUNG THẺ SẢN PHẨM và tạo Hiệu ứng khi hover vào sản phẩm: */
+/*Các sản phẩm sẽ dùng chung 1 dạng cấu hình để các sản phẩm đều hiển thị cách sắp xếp như nhau 
+Nhằm để đồng nhất cách hiển thị all sản phẩm trên cả hệ thống web*/
+/*Tức mục sản phẩm Bán chạy, mục sản phẩm Mới, mục sản phẩm Khuyến mãi,... 
+đều sẽ dùng chung các selector bên dưới */
+.sanPhamCard .card{
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+    margin-bottom: 2em;
+    position: relative; /* Đặt vị trí tương đối để có thể định vị thẻ con bên trong.
+    relative: dịch chuyển thẻ so với vị trí ban đầu (các thẻ khác không chuyển vào vị trí ban đầu của thẻ này)
+    $Cụ thể: Khi sử dụng `position: relative;`, phần tử sẽ được di chuyển dựa trên vị trí ban đầu của nó trong luồng tài liệu
+    và thuộc tính `top`, `right`, `bottom`, và `left` sẽ áp dụng dựa trên vị trí này.
+    Lí do ta đặt 'position: relative;' ở đây là vì để sử dụng 'position: absolute' bên dưới.
+    Chi tiết thì xem ở class "diChuotMuaNgay".
+    */
+}
+
+
+.sanPhamCard .card a{
+    text-decoration: none; /* Loại bỏ gạch chân dưới */
+    color: #333; /* Đổi màu văn bản của liên kết */
+}
+
+/*Cấu hình Chỉnh sửa kích thước cỡ chữ tiêu đề sản phẩm và phần nội dung sản phẩm
+dựa vào kích thước màn hình.
+Nhằm để cho nó hiển thị phù hợp cỡ chữ ở từng thiết bị có kích thước màn hình khác nhau
+Quy tắc được áp dụng ở đây là [kích thước tiêu đề] = [kích thước nội dung] + [kích thước nội dung]*50%
+*/
+.sanPhamCard .card-text{
+    font-size: 6px;
+}
+.sanPhamCard .card-title, .sanPhamCard .priceSanPham{
+    font-size: 9px;
+}
+@media (min-width: 400px){
+    .sanPhamCard .card-text{
+        font-size: 8px;
+    }
+    .sanPhamCard .card-title, .sanPhamCard .priceSanPham{
+        font-size: 12px;
+    }
+}
+@media (min-width: 576px){
+    .sanPhamCard .card-text{
+        font-size: 10px;
+    }
+    .sanPhamCard .card-title, .sanPhamCard .priceSanPham{
+        font-size: 15px;
+    }
+}
+@media (min-width: 768px){
+    .sanPhamCard .card-text{
+        font-size: 13px;
+    }
+    .sanPhamCard .card-title, .sanPhamCard .priceSanPham{
+        font-size: 20px;
+    }
+}
+@media (min-width: 1400px) {
+    .sanPhamCard .card-text{
+        font-size: 15px;
+    }
+    .sanPhamCard .card-title, .sanPhamCard .priceSanPham{
+        font-size: 22.5px;
+    }
+}
+/*Chức năng ngắn gọn dễ hiểu các điều kiện trong mã trên là:
+TH1: 1400px ≤ [giá trị] thực hiện @media (min-width: 1400px)
+TH3: 768 ≤ [giá trị] < 1400px thực hiện @media (min-width: 768px)
+TH4: 576px ≤ [giá trị] < 768px thực hiện @media @media (min-width: 576px)
+TH5: 400px ≤ [giá trị] < 576px thực hiện @media (min-width: 400px)
+TH6: [giá trị] < 400px thì không thực hiện @media nào mà sẽ dùng các selector mặc định, chính là:
+.sanPhamCard .card-text{
+    font-size: 6px;
+}
+.sanPhamCard .card-title, .sanPhamCard .priceSanPham{
+    font-size: 9px;
+}
+
+*/
+
+
+.priceSanPham{
+    color: rgb(210, 0, 0);
+    margin-bottom: 0em;
+    font-weight: bold;
+}
+.priceSafe{
+    color:#333;
+    text-decoration: line-through;
+    font-size: 0.75em;  /*Do thẻ gắn ".priceSafe" luôn là thẻ con của thẻ gắn ".priceSanPham"
+                        nên "font-size: 0.75em;" ở đây sẽ có nghĩa là
+                        kích thước chữ của giá tiền chưa safe 
+                        sẽ luôn bằng 75% kích thước chữ của giá tiền đã safe*/
+    font-weight: normal;
+}
+
+.sanPhamCard .card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 3px 5px limegreen;
+}
+
+.diChuotMuaNgay{
+    position: absolute;
+    top: 0%; 
+    left: 100%;
+    transform: translate(-100%, 0%); 
+    /*Đây là dạng theo chiều dọc còn muốn theo chiều ngang thì chỉnh lại thành:
+    top: 0%; 
+    right: 0%;
+    transform: translate(0%, 0%);
+    */
+    opacity: 0; /* Ẩn ban đầu, bằng việc chỉnh độ mờ thành 0( tức mờ hoàn toàn)*/
+    transition: opacity 0.5s ease-in; /*Thời gian và cách Di chuyển của 'opacity'( độ mờ) ở ký tự "Đọc sách"*/
+    transition: font-size 0.1s ease-in; /*Thiết lặp Thời gian và cách Di chuyển của 'font-size'( độ lớn)*/
+    
+    background-color: dodgerblue;
+    border-radius: 10%;
+    font-weight: bold;
+}
+
+.diChuotMuaNgay button{
+    border-radius: 10%;
+    background-color: limegreen;
+}
+
+.sanPhamCard .card:hover .diChuotMuaNgay{
+    opacity: 1; /* Hiển thị khi hover vào */
+    font-size: 1.25em;
+}
+/*####End*/
+
+
+
+/*####Tương tự, ta cũng xài chung Nút "Xem thêm" chuyển sang trang mới
+trong các mục Sản phẩm bán chạy, mới,...*/
+.nutXemThemChuyenTrang{
+    padding: 1.5% 20%;  /*Đơn vị % này
+    Giúp giá trị tự thay đổi dựa theo kích thước màn hình
+    ( cụ thể là dựa vào các Breakpoints( điểm dừng, điểm ngắt) kích thước màn hình như sm, md, lg,..)
+    Tức 1.5% dựa theo chiều rộng kích thước màn hình đểáp dụng cho phía trên và dưới sẽ
+    chứ không dựa vào chiều cao
+    Tượng tự 20% vẫm dựa theo chiều rộng để áp dụng cho bên phải và trái*/
+    width: 75vw;
+    text-align:center;
+    text-decoration: none;
+
+    color: white;
+    background-color:rgba(0, 0, 255, 0.7);
+    border-radius: 10px;
+    font-size: 15px;
+}
+.nutXemThemChuyenTrang:hover{
+    background-color: blue;
+}
+/*####End*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

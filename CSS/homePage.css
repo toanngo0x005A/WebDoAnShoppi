@@ -1,0 +1,219 @@
+/*Các selector trong file "homePage" này chỉ được dùng cho trang chủ của web
+( tức file index.html chính nằm ngay bên trong users)
+
+
+
+/*####Phần trinh chiếu lớn*/
+#TrinhChieuHinhAnh .carousel-item h5, #TrinhChieuHinhAnh .carousel-item p{
+    /*Có thể chỉnh lại màu cho phần text nếu muốn, nhưng ở đây màu đen là hợp lý nhất rồi. 
+    Đang sử dụng giao diện đen nên màu mặc định là đen rồi khỏi chỉnh*/
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Tạo hiệu ứng hào quang */
+}
+/*####End*/
+
+
+
+
+
+/*####Mục PHÂN LOẠI Sản phẩm*/
+#MucPhanLoaiSP{
+    background-color:  #111;
+}
+
+#MucPhanLoaiSP h1{
+    color:limegreen;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+#MucPhanLoaiSP h2{
+    color:black;
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Tạo hiệu ứng hào quang */
+}
+
+#danhMucSanPham > *{
+    border: none;
+    margin: 1.25em 0;
+}
+
+
+.noiDungDanhMuc{
+    background-color: #222;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-evenly;  /*Do ta không có chiều dọc được đặt cụ thể cho thẻ gắn class ".noiDungDanhMuc"
+    ( vì chiều dọc sẽ được dựa trên kích thước nội dung)
+    Thế nên thuộc tính "justify-content: space-evenly;"( ở đây có tác dụng là canh vị trí theo chiều dọc)
+    sẽ không có tác dụng. Có thể xóa luôn thuộc tính này nếu muốn, vì ở đây đường nào nó cũng vô dụng.
+    Do nếu nội dung chỉnh theo chiều dọc này thì chiều dọc lại thay đổi dựa trên vị trí mới của nội dung
+    =>Vòng lặp => Thế nên thuộc tính sẽ không hoạt động để tránh xảy ra vòng lặp
+    */
+    padding-top: 10px; /*Vì TH của mã này ta không thể dùng "justify-content: space-evenly;" để căn chỉnh chiều dọc
+    Thế nên ta dùng padding để thay thế việc căn chỉnh, ở đây "padding-top: 10px" sẽ nhìn oke nên chọn 10px*/
+    align-items: center; /*Còn thuộc tính "align-items: center;" ở đây dù vẫn không được đặt cụ thể
+    Nhưng nó có giới hạn cần tuyên theo. Cụ thể là chiều rộng của thẻ sẽ bị giới hạn và xác định bởi kích thước màn hình
+    Trong TH kích thước ở loại xl trở lên( >=1400px) thì 6 thẻ sẽ được sắp thành 1 dòng
+    Thế nên các thẻ sẽ có chiều rộng bị cố định trong 1 kích thước màn hình cụ thể*/ 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color:dodgerblue;
+    border-radius: 5%;
+    text-decoration: none;
+}
+
+.noiDungDanhMuc:hover{
+    transform: scale(0.9);
+    box-shadow: 0 10px 5px dodgerblue; 
+}
+
+.noiDungDanhMuc i{
+    font-size: 1.75em;
+}
+/*####End*/
+
+
+
+
+/*####Mục Sản phẩm Bán chạy nhất*/
+#MucSanPhamBanChay{
+    margin-top: 5em;
+    padding: 4em 1.5em;
+    background-color: rgb(130, 180, 160);
+    box-shadow:rgb(61, 61, 61) 0 0 5px;
+}
+
+#tieuDeSPBanChay{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.25em;
+}
+
+#tieuDeSPBanChay h3, .fa-fire{
+    color: red;
+    font-weight: bold;
+    font-size: 2em;
+}
+/*End*/
+
+
+
+/*####Mục sản phẩm Mới*/
+#MucSanPhamMoi{
+    margin-top: 5em;
+    padding: 4em 1.5em;
+    background-color:rgb(219, 219, 219);
+    box-shadow:rgb(61, 61, 61) 0 0 5px;
+}
+
+#tieuDeSPMoi{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.25em;
+}
+
+#tieuDeSPMoi h3, .fa-newspaper{
+    color:#0ba00b;
+    font-weight: bold;
+    font-size: 2em;
+}
+/*####End*/
+
+
+/*####Mục sản phẩm Khuyến Mãi: */
+#MucSanPhamKhuyenMai{
+    margin-top: 5em;
+    padding: 4em 1.5em;
+    background-color: #ffd90030;
+    box-shadow:rgb(61, 61, 61) 0 0 5px;
+}
+
+#tieuDeSPKhuyenMai{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.25em;
+}
+
+#tieuDeSPKhuyenMai h3, .fa-piggy-bank{
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#MucSanPhamKhuyenMai .card{
+    animation: doiMauSafe 4s infinite; /* Sử dụng animation doiMauSafe với thời gian 4s và lặp vô hạn */
+}
+@keyframes doiMauSafe {
+    0% {
+        border: 5px solid red;
+    }
+    25% {
+        border: 5px solid blueviolet; 
+    }
+    50% {
+        border: 5px solid yellow; 
+    }
+    75%{
+        border: 5px solid orange
+    }
+    100%{
+        border: 5px solid red;
+    }
+}
+/*$$$$Câu hỏi đắt giá: Lý do vì sao ta lại đặt 100% là red trong khi 0% đã là red rồi???
+=>Đơn giản là vì dể đồng bộ màu để nhìn cho mượt mà
+Cụ thể là vì cái @keyframes này chỉ chạy từ 0% dần đến 100% rồi lại nhảy về 0% rồi dằn đến 100% nữa
+chứ nó không đảo lại từ 100% về 0% được
+Thế nên nếu ta muốn việc chuyển đọng animation này trông mượt thì ta có được được quy tắc
+là ở vị trí 0% phải tương đồng với vị trí ơ 100%. 
+***Đây chỉ là mẹo thôi chứ không bắt buộc là 0% luôn phải giống 100% nhé***
+Cụ thể ở đây nó sẽ chuyển động như sau:
+Red( ở 0%) => Blueviolet( ở 25%) => Yellow( ở 50%) => Orange( ở 75%) => Red( ở 100%)[ hết 1 lần chạy]
+[Ngay lặp tức nhảy về vị trí 0%]
+Tức nếu ta thay vì đặt Red ở 100% mà đặt Blue ở 100% thì khi đạt tới 100% sẽ hiện lên màu xanh
+rồi ngay lặp tức nhảy về màu đỏ ở 0% ngay( không có chuyển động đổi màu mượt cc gì hết).
+*/
+/*####End*/
+
+
+
+
+/*####Mục thông tin Bản quyền*/
+#MucBanQuyen{
+    background-color:#111;
+    padding: 2em;
+}
+
+#MucBanQuyen > *{
+    color: white;
+}
+
+#MucBanQuyen h2{
+    color:limegreen;
+    margin-bottom: 0.75em;
+}
+
+.iconMangXaHoi{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #8A7F86;
+    border-radius: 50%;
+    color:blue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+    margin: 0em 0.75em;
+    text-decoration: none; /*Xóa gạch chân*/
+}
+
+#thongTinBanQuyen{
+    font-weight: bold;
+    margin-top: 2.5em;
+}
+/*####END*/
