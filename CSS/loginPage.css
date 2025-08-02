@@ -1,5 +1,5 @@
 #backgroundLogIn{
-    background-image: url('../login/imgs/anh-cay-xanh-10.jpg'); 
+    background-image: url('../logIn/imgs/anh-cay-xanh-10.jpg'); 
     /*Tương tự như thẻ <img> ta có thể dùng link viết tắt nếu nó nằm cùng folder chương trình*/
     background-size: cover; /* Hiển thị hình ảnh đủ kích thước để lấp đầy phần nền */
     background-position: center; /* Căn giữa hình ảnh */
